@@ -1,0 +1,34 @@
+{
+  "document_type": "position paper",
+  "primary_venue": "Journal of Open Research Software, Issues in Research Software",
+  "target_length_words": [3000, 4000],
+  "audience": [
+    "research-software engineers",
+    "computational scientists",
+    "artifact and reproducibility reviewers",
+    "publishers designing agent-assisted review"
+  ],
+  "problem": "Successful execution and provenance capture do not by themselves show that identified evidence warrants each material scientific claim.",
+  "thesis": "Agent-assisted computational science needs prospective claim-versioned acceptance contracts and externally enforced, role-scoped state transitions layered over interoperable claim and provenance standards.",
+  "contributions": [
+    "Operational vocabulary separating rerenderability, repeatability, reproducibility, replication, and scientific validity",
+    "A prospective claim acceptance contract and externally enforced lifecycle",
+    "Claim-version-scoped and revocable attestations with dependency invalidation",
+    "An interoperability profile for existing provenance, workflow-run, and claim-publication standards",
+    "A bounded reference implementation and explicit validation agenda"
+  ],
+  "prohibited_claims": [
+    "The claim/evidence/provenance graph is novel",
+    "MCRP proves scientific validity",
+    "The current demonstration establishes improved review outcomes",
+    "Cryptographic signatures establish scientific independence"
+  ],
+  "evidence_gates": [
+    "Every novelty statement appears in the claim ledger",
+    "Every citation is verified against a primary or official source",
+    "A sanitized protocol version is frozen",
+    "An independent reviewer exercises the reference record",
+    "The rendered candidate is inspected before release"
+  ]
+}
+
