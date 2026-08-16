@@ -13,7 +13,8 @@ The residual design question is whether a prospective, externally enforced, clai
 - Artifact route: retain the literature-grounded PDF as an outward-facing technical supplement authored by Codex and junior.
 - Evidence status: closest-work comparison and claim ledger remain part of the technical record.
 - Validation status: existing synthetic reference implementation only; no comparative benefit claim is permitted.
-- Release status: human editorial, privacy, licensing, and artifact checks are required before any outward release.
+- Release status: the reviewed technical supplement and companion post are public; any revision or additional outward-facing post requires fresh editorial, privacy, licensing, and artifact checks.
+- Architecture status: a working sketch now extends MCRP toward distributed-review compatibility through portable review attestations, federated trust nodes, and plural policy views. This direction is unimplemented and unvalidated.
 
 ## Source material
 
@@ -26,6 +27,11 @@ The starting protocol and validation artifacts remain in the private assistant a
 - `research/`: closest-work matrix, claim ledger, writing packet, and audits
 - `evaluation/`: declared research questions, baselines, and validation records
 - `docs/`: publication-defer, privacy, authorship, availability, and outward-release guidance
+- `docs/distributed-review-architecture.md`: proposed record, attestation, federation, policy, and trust-view layers
+- `docs/series-roadmap-distributed-review.md`: posts 2–4 and the proposed second outward-facing arc
+- `research/trust-layer-landscape.md`: bounded standards and closest-system map for the trust layer
+- `research/distributed-review-architecture-review-2026-08-16.md`: adversarial architecture, source, and narrative review with adjudication
+- `protocol/review-attestation-federation-v0.1-draft.md`: non-normative next-component protocol sketch
 - `review/`: independent scientific and reproducibility review records
 
 ## Non-negotiable limits
