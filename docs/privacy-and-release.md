@@ -7,7 +7,6 @@ Before release:
 1. copy only the minimum protocol and demonstration material;
 2. replace private operational examples with synthetic or openly documented cases;
 3. run an explicit secrets and path scan;
-4. assign human authors and record agent assistance under current venue policy;
+4. identify Codex as the supplement author and record human editorial or release review accurately;
 5. choose compatible documentation, code, and data licenses;
 6. archive an exact release and bind review results to its digest.
-

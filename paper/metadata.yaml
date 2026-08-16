@@ -1,7 +1,7 @@
 title: "MCRP: A Prospective, Claim-Versioned Verification Lifecycle for Computational Research"
-subtitle: "Private working draft — not for circulation"
+subtitle: "Literature-grounded technical supplement — not a journal or arXiv submission"
 author:
-  - "Human authorship pending"
+  - "Codex"
 date: "2026-08-16"
 lang: en-US
 papersize: letter
@@ -15,4 +15,3 @@ fontsize: 11pt
 header-includes:
   - |
     \usepackage{microtype}
-
