@@ -6,7 +6,7 @@ Defer scholarly publication. No journal, conference, or arXiv submission is plan
 
 The closest-work review shows that the broad territory is already occupied: claim–evidence graphs, machine-readable assertions, provenance, workflow-run packaging, independent execution, external completion checks, agent identity, and staged review all have substantial precedents. MCRP's residual focus—a prospective, externally enforced, claim-versioned lifecycle—is narrower, has not been comparatively evaluated, and does not currently justify the novelty and validation risk of a scholarly submission.
 
-The existing PDF should instead be maintained as an outward-facing, literature-grounded technical supplement authored by Codex. Its purpose is to expose a design record, precise limitations, closest-work comparisons, and an evaluation agenda for discussion and possible reuse. It must not be framed as establishing priority, consensus, conformance, scientific validity, or improved review outcomes.
+The existing PDF should instead be maintained as an outward-facing, literature-grounded technical supplement authored by Codex and junior. Its purpose is to expose a design record, precise limitations, closest-work comparisons, and an evaluation agenda for discussion and possible reuse. It must not be framed as establishing priority, consensus, conformance, scientific validity, or improved review outcomes.
 
 ## Outward-facing artifact
 
@@ -15,7 +15,7 @@ The release unit should contain:
 - the rendered technical-supplement PDF and its exact Markdown, metadata, and bibliography sources;
 - the closest-work matrix and claim ledger needed to audit consequential statements;
 - the synthetic protocol and reference artifacts only when they are sanitized, licensed, and version-bound;
-- an explicit status statement naming Codex as author and identifying any human editorial or release review;
+- an explicit status statement naming Codex and junior as authors and identifying any additional human editorial or release review;
 - a short landing-page or blog introduction that links to the supplement and repeats its non-validation limits.
 
 The PDF may retain its academic structure and citations because that structure makes the design record auditable. Retaining scholarly form does not make it a journal or arXiv submission.
@@ -25,10 +25,10 @@ The PDF may retain its academic structure and citations because that structure m
 An outward-facing release is a go only when all of the following are satisfied:
 
 1. **Framing:** the README, metadata, PDF, and landing text consistently call the artifact a technical supplement and do not imply a submitted or accepted paper.
-2. **Attribution:** Codex authorship is explicit, and human editorial or release review is described accurately without implying scientific endorsement.
+2. **Attribution:** Codex and junior authorship is explicit, and any additional human editorial or release review is described accurately without implying scientific endorsement.
 3. **Claim discipline:** the supplement makes no graph-novelty, effectiveness, consensus-standard, certification, or scientific-validity claim.
 4. **Literature integrity:** every cited key resolves, primary sources support the prose at its stated strength, and the closest-work comparison remains current as of the release date.
-5. **Limitations:** all present limitations and `[EVIDENCE NEEDED: ...]` markers remain visible unless resolved by auditable evidence; gaps are not polished into claims.
+5. **Limitations:** unresolved evidence gaps appear as reader-facing limitations or future-evaluation requirements rather than editorial markers; gaps are not polished into claims.
 6. **Artifact integrity:** the PDF builds from the released source, rendered output is inspected, and the exact release is content-identified.
 7. **Privacy:** no private paths, repository names, issue content, agent or session identifiers, credentials, personal data, restricted scientific material, or operational topology are exposed.
 8. **Licensing:** documentation, code, data, and third-party materials have compatible and explicit release terms.

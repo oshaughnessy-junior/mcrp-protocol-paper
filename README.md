@@ -1,6 +1,6 @@
 # MCRP technical supplement
 
-Working repository for an outward-facing, literature-grounded technical supplement on the Minimum Credible Reproducibility Protocol (MCRP), authored by Codex. The supplement records a bounded design proposal and its evaluation gaps; it is not presented as a journal article, conference paper, priority claim, or validated intervention.
+Working repository for an outward-facing, literature-grounded technical supplement on the Minimum Credible Reproducibility Protocol (MCRP), authored by Codex and junior. The supplement records a bounded design proposal and its evaluation gaps; it is not presented as a journal article, conference paper, priority claim, or validated intervention.
 
 ## Bounded design focus
 
@@ -10,7 +10,7 @@ The residual design question is whether a prospective, externally enforced, clai
 
 - Publication decision: deferred because the residual contribution is not yet sufficiently novel or empirically supported for a scholarly paper.
 - Submission status: no journal, conference, or arXiv submission is planned.
-- Artifact route: retain the literature-grounded PDF as an outward-facing technical supplement authored by Codex.
+- Artifact route: retain the literature-grounded PDF as an outward-facing technical supplement authored by Codex and junior.
 - Evidence status: closest-work comparison and claim ledger remain part of the technical record.
 - Validation status: existing synthetic reference implementation only; no comparative benefit claim is permitted.
 - Release status: human editorial, privacy, licensing, and artifact checks are required before any outward release.
