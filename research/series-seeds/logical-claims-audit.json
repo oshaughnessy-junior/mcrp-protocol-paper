@@ -1,0 +1,78 @@
+{
+  "schema": "openclaw.scientific-writing.audit.v1",
+  "artifact_id": "mcrp-distributed-review-series-seeds-claims-2026-08-16",
+  "manuscript": "docs/series-seeds/",
+  "section": "Parts 2-12 drafting seeds",
+  "claims": [
+    {
+      "id": "series-background-prc",
+      "text": "Repository-hosted work can be reviewed and curated by separate services and communities.",
+      "rhetorical_role": "previous work",
+      "logic_type": "background",
+      "consequence_level": "medium",
+      "ledger_claim_id": "trust-landscape-prc",
+      "support_status": "verified",
+      "evidence": ["research/trust-layer-landscape.md"],
+      "citation": "COAR publish-review-curate and Peer Community In primary materials",
+      "caveat": "This does not establish that MCRP improves or scales those workflows.",
+      "unresolved_question": "Which implementation will provide the first interoperability trial?",
+      "action": "keep"
+    },
+    {
+      "id": "series-background-registries",
+      "text": "Signed claims, transparent registration, decentralized notification, and content-addressed assertions have substantial prior standards and systems.",
+      "rhetorical_role": "previous work",
+      "logic_type": "background",
+      "consequence_level": "high",
+      "ledger_claim_id": "trust-landscape-reusable-foundations",
+      "support_status": "verified",
+      "evidence": ["research/trust-layer-landscape.md"],
+      "citation": "VC 2.0, SCITT RFC 9943, LDN, Activity Streams, WebSub, COAR Notify, Nanopublications",
+      "caveat": "The proposed cross-system scientific profile is unimplemented and untested.",
+      "unresolved_question": "Can round-trip crosswalks preserve exact MCRP semantics?",
+      "action": "keep"
+    },
+    {
+      "id": "series-design-living-network",
+      "text": "A living network can be represented as immutable events plus recomputed policy-bound projections.",
+      "rhetorical_role": "proposed idea",
+      "logic_type": "inference",
+      "consequence_level": "high",
+      "ledger_claim_id": "mcrp-living-network-design",
+      "support_status": "human-asserted",
+      "evidence": ["docs/distributed-review-architecture.md", "protocol/review-attestation-federation-v0.1-draft.md"],
+      "citation": "not an empirical claim",
+      "caveat": "No implementation has demonstrated convergence, scale, usability, or epistemic benefit.",
+      "unresolved_question": "Which minimal event loop should be prototyped first?",
+      "action": "keep"
+    },
+    {
+      "id": "series-design-authority",
+      "text": "Automation should update records and candidate impacts without silently granting scientific authority.",
+      "rhetorical_role": "boundary",
+      "logic_type": "paper-description",
+      "consequence_level": "high",
+      "ledger_claim_id": "mcrp-human-authority-boundary",
+      "support_status": "human-asserted",
+      "evidence": ["docs/distributed-review-architecture.md", "protocol/review-attestation-federation-v0.1-draft.md"],
+      "citation": "MCRP governance definition",
+      "caveat": "Future communities could adopt different rules, but they must not be described as current MCRP.",
+      "unresolved_question": "How should human adoption of agent-assisted reports be represented in fixtures?",
+      "action": "keep"
+    },
+    {
+      "id": "series-implication-evaluation",
+      "text": "MCRP should be tested against simpler open-review baselines and stopped or narrowed when benefits do not justify costs.",
+      "rhetorical_role": "evaluation agenda",
+      "logic_type": "implication",
+      "consequence_level": "high",
+      "ledger_claim_id": "mcrp-evaluation-stop-rule",
+      "support_status": "human-asserted",
+      "evidence": ["evaluation/research-questions.md"],
+      "citation": "not an outcome claim",
+      "caveat": "No thresholds or trial protocol have yet been preregistered.",
+      "unresolved_question": "What effect sizes and stop thresholds are decision-relevant?",
+      "action": "keep"
+    }
+  ]
+}

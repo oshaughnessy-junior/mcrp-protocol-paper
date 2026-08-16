@@ -10,6 +10,8 @@ claim_posture: proposed-not-validated
 
 # MCRP outward-facing sequence after Part 1
 
+Drafting seeds for every numbered installment are indexed in [`docs/series-seeds/README.md`](series-seeds/README.md). They are private working material, not publication-ready posts.
+
 ## Narrative rule
 
 The current four-part series should complete MCRP's core logic before expanding the institutional frame:

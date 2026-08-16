@@ -1,0 +1,59 @@
+{
+  "schema": "openclaw.scientific-writing.packet.v1",
+  "artifact_id": "mcrp-distributed-review-series-seeds-2026-08-16",
+  "purpose": "Bootstrap mature outward-facing drafts for Parts 2 through 12 of the MCRP distributed-review sequence.",
+  "audience": "Technically literate researchers, research-software practitioners, reviewers, and scholarly-infrastructure builders.",
+  "section_type": "linked explanatory blog sequence",
+  "target_latex_fragments": ["not-applicable-blog-series"],
+  "outline": [
+    "Complete the core MCRP lifecycle: claim paths, authority, and freshness.",
+    "Decompose journal functions and introduce portable review records.",
+    "Describe federated attestation discovery as established guiding infrastructure.",
+    "Develop plural reputation, living-network automation, and distributed work routing.",
+    "Preserve disagreement, audit failure modes, and close with an evaluation contract."
+  ],
+  "evidence_packets": [
+    "research/trust-layer-landscape.md",
+    "docs/distributed-review-architecture.md",
+    "protocol/review-attestation-federation-v0.1-draft.md",
+    "research/distributed-review-architecture-review-2026-08-16.md",
+    "evaluation/research-questions.md"
+  ],
+  "retrieval_capability": "bounded primary-source landscape already assembled; no new research-librarian retrieval required for seed prose",
+  "claim_ledger": "research/series-seeds/logical-claims-audit.json",
+  "bibliography_inputs": [
+    "W3C Verifiable Credentials Data Model 2.0",
+    "IETF SCITT RFC 9943",
+    "W3C Linked Data Notifications, Activity Streams 2.0, and WebSub",
+    "COAR Notify and publish-review-curate materials",
+    "Nanopublications and Trusty URIs",
+    "OpenID Federation 1.0",
+    "DocMaps, ORCID, ROR, and CRediT"
+  ],
+  "figures_tables": [
+    "Claim path versus derivation path",
+    "Typed authority table",
+    "Release freshness timeline",
+    "Journal-function decomposition",
+    "Attestation registry event path",
+    "Living-network update loop",
+    "Evaluation contract"
+  ],
+  "human_questions": [
+    "Which part should become the next outward-facing publication after the full private sequence is mature?",
+    "What cadence should the outward sequence use?"
+  ],
+  "constraints": [
+    "Authorship remains Codex and junior.",
+    "Publication and deployment require explicit human approval.",
+    "Trust registries and component standards are guiding prior art, not originality claims.",
+    "Automation may update records and derived views but may not silently grant human scientific authority.",
+    "Every public post must distinguish sourced background, proposed design, and unvalidated expected benefit."
+  ],
+  "excluded_claims": [
+    "MCRP replaces journals.",
+    "MCRP solves trust or establishes scientific truth.",
+    "MCRP has demonstrated interoperability, scale, governance legitimacy, capture resistance, or better review outcomes.",
+    "A signature or registry receipt proves competence, independence, or scientific adequacy."
+  ]
+}
