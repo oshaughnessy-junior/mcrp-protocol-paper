@@ -1,10 +1,10 @@
 # MCRP review-attestation federation — v0.1 working draft
 
-This document sketches the next MCRP protocol components. It is not a frozen specification, implementation commitment, or validated governance model.
+This document sketches the next MCRP protocol components. It is not a frozen specification, implementation commitment, or validated governance model. Trust registries, signed assertions, transparency logs, decentralized notifications, and publish–review–curate networks are established prior art and guiding infrastructure; no originality is claimed for them. Candidate profiles should reuse W3C Verifiable Credentials, SCITT-style receipts, Activity Streams, Linked Data Notifications, WebSub, COAR Notify, Nanopublications, and established scholarly identifiers where their semantics fit.
 
 ## 1. Design target
 
-Enable independently governed reviewers, verification services, archives, communities, and discovery systems to make, register, exchange, challenge, and evaluate statements about the same immutable Scientific Record Release (SRR).
+Enable independently governed reviewers, verification services, archives, communities, and discovery systems to make, register, exchange, challenge, and evaluate statements about the same immutable Scientific Record Release (SRR). The principal goal is automation at scale: a network in which new signed events drive incremental validation, discovery, review routing, impact analysis, notification, and policy recomputation.
 
 The protocol MUST preserve the distinction among:
 
@@ -162,9 +162,29 @@ An implementation MAY separate these operations among archive, log, index, notif
 
 Any authoritative transition or policy result MUST disclose the requester, issuer, node, credential issuer, policy authority, and their control principals; delegation paths; material shared dependencies; and the independence rule evaluated. A different service account, agent, model, hostname, or corporate subsidiary MUST NOT establish independence by itself.
 
-## 5. Federation rules
+## 5. Living-network automation
 
-- The same signed object MAY be registered at multiple independently governed nodes.
+A conforming automation design SHOULD support the following event loop:
+
+1. receive or discover a signed release, review, challenge, contribution, credential, dependency, or status event;
+2. validate its identity, signature, schema, causal references, authority class, and target resolution;
+3. deduplicate it by stable event identity and record processing against a signed checkpoint;
+4. update indexes and declared dependency reachability without rewriting source objects;
+5. emit scoped mechanical observations, candidate staleness or impact events, and unresolved-work items;
+6. recompute policy views against a frozen event and credential snapshot;
+7. notify subscribed consumers and route required review work;
+8. accept later human dispositions, challenges, corrections, or adjudications as new signed events;
+9. repeat without treating delayed delivery or a network partition as global completeness.
+
+Every event SHOULD include a stable identity, causal parents where known, producer and processing times, schema and policy versions, and an idempotency rule. Consumers MUST be able to resume from checkpoints and process duplicates without creating duplicate scientific meaning.
+
+Automated consumers MAY resolve records, traverse graphs, detect changes, run bounded workflows, compare outputs, calculate coverage, match subscriptions, propose reviewer routes, and draft discrepancy reports. They MUST NOT silently convert candidate impact into scientific invalidation, satisfy human-disposition predicates, invent missing reviewer authority, or erase disagreement.
+
+The living network is an append-only event history plus continuously recomputed projections. Historical approval remains historical; current views update when new evidence arrives.
+
+## 6. Federation rules
+
+- The same signed object MAY be registered at multiple separately identified nodes. Claims of governance independence require explicit control, ownership, funding, hosting, key-custody, and shared-dependency evidence evaluated under a named policy.
 - Nodes MUST publish identity, keys, registration policy, moderation policy, retention policy, supported schemas, and checkpoint mechanism.
 - Replication MUST preserve the original signed bytes, issuer, subject, and receipts.
 - A node MUST NOT present a mirrored statement as its own endorsement.
@@ -174,7 +194,7 @@ Any authoritative transition or policy result MUST disclose the requester, issue
 - A federation policy MAY exclude content from discovery. Moderation evidence MAY require opaque or privacy-preserving tombstones, delayed disclosure, or private audit; a public reason or target digest MUST NOT be required when it would violate privacy, safety, or law.
 - Replication and schema mapping MUST retain the signed original. Mapping artifacts MUST identify their schema and mapping versions and MUST fail rather than discard decision scope, exclusions, or limitations.
 
-## 6. Reviewer and contributor histories
+## 7. Reviewer and contributor histories
 
 Histories SHOULD be event-derived and faceted by:
 
@@ -190,7 +210,7 @@ The base protocol MUST NOT define a global scalar reputation score. A ranking pr
 
 Review quality MUST NOT be equated with agreement with later majority opinion. Qualified dissent and correct early challenges are first-class events.
 
-## 7. Identity, privacy, and restricted review
+## 8. Identity, privacy, and restricted review
 
 - Scholarly identifiers such as ORCID and ROR SHOULD be reused where adequate.
 - Agent identity MUST remain distinct from the authorizing human or institution.
@@ -201,13 +221,14 @@ Review quality MUST NOT be equated with agreement with later majority opinion. Q
 - A commitment to restricted evidence MUST remain distinguishable from evidence that is absent or was never inspected.
 - Withdrawal from public display does not necessarily permit deletion from an audit record; governance, safety, and legal requirements remain unresolved.
 
-## 8. Candidate capability vector
+## 9. Candidate capability vector
 
 Avoid a cumulative badge ladder. A deployment reports independently tested capabilities and their observation windows:
 
 - `attestation-portability`: canonical serialization, signature envelope, key resolution, algorithm agility, and exact MCRP tuple binding;
 - `transparent-registration`: receipt verification, signed checkpoints, bounded status history, and submission-delay monitoring;
 - `record-discovery`: structured query, notifications, and declared index coverage;
+- `incremental-automation`: idempotent processing, checkpoint resume, causal event handling, dependency impact candidates, subscription delivery, and recomputation latency;
 - `cross-node-exchange`: lossless exchange or replication across separately identified nodes, with governance-independence evidence reported separately;
 - `revocation-convergence`: observed propagation time and partitions under a declared SLA, including `unknown` or `pending-convergence` states;
 - `policy-reproducibility`: identical results from a frozen event, credential, revocation, policy, evaluator, and clock snapshot;
@@ -216,7 +237,7 @@ Avoid a cumulative badge ladder. A deployment reports independently tested capab
 
 These are infrastructure capabilities, not levels of scientific truth or reviewer quality.
 
-## 9. Time, keys, and long-lived records
+## 10. Time, keys, and long-lived records
 
 - Events SHOULD record signed issue time, log-observed time, causal references, and allowed clock skew.
 - Policies MUST define behavior under partitions and uncertain ordering; they SHOULD prefer `unknown` or `pending-convergence` to a falsely current result.
@@ -224,7 +245,7 @@ These are infrastructure capabilities, not levels of scientific truth or reviewe
 - Key rotation, compromise, algorithm migration, and countersignature history MUST be append-only. Later compromise MUST NOT silently invalidate every historical statement or leave them silently trusted.
 - Policies, evaluators, schemas, and default trust-root releases MUST themselves be signed, versioned, rollback-resistant, and covered by reproducible fixtures.
 
-## 10. Required test suite before stabilization
+## 11. Required test suite before stabilization
 
 - exact subject and claim binding;
 - replay onto successor releases;
@@ -243,7 +264,7 @@ These are infrastructure capabilities, not levels of scientific truth or reviewe
 - uncovered-claim and unresolved-disagreement preservation;
 - export to established scholarly review and provenance standards.
 
-## 11. Open governance questions
+## 12. Open governance questions
 
 - Who may issue competency attestations, and how can newcomers enter?
 - Which combinations of identity, affiliation, collaboration, and funding create a disqualifying conflict?

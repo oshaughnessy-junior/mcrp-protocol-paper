@@ -19,6 +19,11 @@ The position paper does not claim answers to these questions. They define the em
 12. How quickly and accurately do challenges, withdrawals, key revocations, scientific retractions, and freshness events propagate across partially connected nodes?
 13. Can users distinguish log inclusion, process completion, community endorsement, and scientific support in realistic interfaces?
 14. Does policy-visible plural review improve disagreement localization and correction compared with repository-plus-open-review and publish–review–curate baselines?
+15. At realistic event volumes, can the network ingest, validate, deduplicate, index, and distribute updates within declared latency and completeness boundaries?
+16. Can consumers resume from signed checkpoints and converge after duplicate delivery, reordering, delay, or network partition without losing or double-counting scientific meaning?
+17. How accurately does automated dependency-impact traversal create review work, and what are its false-staleness and missed-impact rates?
+18. How quickly do claim-level discovery indexes, review queues, subscriber notifications, and policy views update after a new release, challenge, revocation, or dependency event?
+19. Which steps can agents automate safely, and where does increased throughput create false confidence, reviewer overload, or judgment laundering?
 
 These questions test a proposed architecture. They do not imply that trust-node federation, reviewer reputation, or distributed review improves science.
 

@@ -14,7 +14,7 @@ The residual design question is whether a prospective, externally enforced, clai
 - Evidence status: closest-work comparison and claim ledger remain part of the technical record.
 - Validation status: existing synthetic reference implementation only; no comparative benefit claim is permitted.
 - Release status: the reviewed technical supplement and companion post are public; any revision or additional outward-facing post requires fresh editorial, privacy, licensing, and artifact checks.
-- Architecture status: a working sketch now extends MCRP toward distributed-review compatibility through portable review attestations, federated trust nodes, and plural policy views. This direction is unimplemented and unvalidated.
+- Architecture status: a working sketch extends MCRP toward distributed-review compatibility through portable review attestations, federated trust nodes, and plural policy views. Trust-node concepts and component standards are guiding prior art, not an originality claim. The framework's main target is automation at scale: a living event network whose indexes, impact assessments, review queues, notifications, and derived views update as signed evidence arrives. This direction is unimplemented and unvalidated.
 
 ## Source material
 

@@ -13,7 +13,9 @@ claim_posture: proposed-not-validated
 
 ## Executive judgment
 
-MCRP's natural next step is not a larger provenance graph. It is to make the Scientific Record Release (SRR) a portable object that independent parties can review, challenge, endorse, index, and monitor without requiring one journal, publisher, or server to control the result.
+MCRP's natural next step is not a larger provenance graph or an original trust-server design. Existing work on signed claims, transparency services, decentralized notifications, review-event exchange, scholarly identifiers, and distributed assertions supplies the guiding infrastructure and motivation. MCRP's role is to make the Scientific Record Release (SRR) and every review event precise enough that those systems can automate scientific review coordination at scale.
+
+The immediate guides include [W3C Verifiable Credentials](https://www.w3.org/TR/vc-data-model-2.0/) for signed claims, [IETF SCITT](https://www.rfc-editor.org/rfc/rfc9943.html) and [Sigstore Rekor](https://docs.sigstore.dev/logging/overview/) for transparent statement registration, [Linked Data Notifications](https://www.w3.org/TR/ldn/), [Activity Streams 2.0](https://www.w3.org/TR/activitystreams-core/), [WebSub](https://www.w3.org/TR/websub/), and [COAR Notify](https://coar-notify.net/specification/1.0.1/) for decentralized event delivery, and [Nanopublications](https://nanopub.net/) for content-addressed distributed assertions. MCRP should profile and connect these systems, not claim to originate them.
 
 The larger target is a **distributed-review-compatible science framework** with four separable planes:
 
@@ -22,7 +24,9 @@ The larger target is a **distributed-review-compatible science framework** with 
 3. **Trust nodes:** federated services that may register, resolve, archive, replicate, index, or help users discover those statements while advertising which capabilities and retention commitments they actually provide.
 4. **Trust views:** transparent, community- or user-specific policies that compute a current interpretation without rewriting the underlying history.
 
-This is an architectural hypothesis, not a demonstrated system. MCRP has not yet shown interoperability, security, usable governance, improved review, or resistance to institutional capture.
+The target is a **living, self-updating network**: new releases, executions, reviews, challenges, corrections, dependency changes, and credential events automatically trigger bounded validation, indexing, impact analysis, policy recomputation, notifications, and new review tasks. “Self-updating” means the network updates its records and derived views from signed events; it does not mean that software silently grants scientific authority or rewrites human judgments.
+
+This is an architectural hypothesis, not a demonstrated system. MCRP has not yet shown interoperability, web-scale automation, convergence, security, usable governance, improved review, or resistance to institutional capture.
 
 ## The central invariant
 
@@ -224,6 +228,41 @@ The architecture uses “trust” only as shorthand. Implementations should name
 - **user reliance:** a decision outside the protocol by a reader or downstream system.
 
 These relations are not interchangeable and should not inherit one another silently.
+
+## Automation and the living network
+
+The primary engineering goal is to turn scientific review from a sequence of disconnected documents into an event-driven network that can remain current without requiring every reader or journal to rediscover every change manually.
+
+A candidate loop is:
+
+1. An archive publishes or supersedes an exact SRR.
+2. Registries validate the signed event, issue receipts, index its claims and dependencies, and notify subscribers.
+3. Automated consumers resolve the record, perform schema, signature, reachability, freshness, and policy checks, and publish scoped observation events.
+4. Dependency and citation monitors identify potentially affected claims and emit impact candidates rather than silently changing scientific state.
+5. Policy evaluators recompute frozen, reproducible trust views from the new event snapshot.
+6. Routing services create review requests for uncovered, stale, disputed, or policy-required work.
+7. Agents may retrieve evidence, reconstruct environments, execute workflows, compare outputs, and draft reports under recorded delegation.
+8. Qualified reviewers append scientific dispositions, challenges, or adjudications where human authority is required.
+9. Nodes distribute the new events and downstream views update again.
+
+This loop is incremental and idempotent. Consumers should process an event more than once without duplicating its meaning, resume from signed checkpoints, state their completeness boundary, and tolerate partitions or delayed delivery. Derived views should expose `unknown`, `stale`, or `pending-convergence` rather than pretend that every node has seen the same world.
+
+The network is “living” because its state is a reproducible projection over an accumulating event history. Historical records remain immutable; current interpretations update as new evidence arrives.
+
+### Automate aggressively, authorize conservatively
+
+Good automation targets include:
+
+- object resolution, signatures, schemas, and receipts;
+- claim–evidence and dependency traversal;
+- change detection and candidate invalidation;
+- notification, deduplication, indexing, and subscription matching;
+- review coverage and policy requirement checks;
+- environment reconstruction, bounded execution, and output comparison;
+- reviewer discovery and conflict candidates;
+- generation of review queues, discrepancy packets, and status summaries.
+
+Automation should not silently decide that all material claims were declared, a custody boundary is scientifically adequate, a reviewer is genuinely independent, an interpretation is warranted, or a challenge is scientifically resolved. Those boundaries are represented as explicit tasks and dispositions so that increasing automation does not launder judgment into infrastructure.
 
 ## Threat model
 

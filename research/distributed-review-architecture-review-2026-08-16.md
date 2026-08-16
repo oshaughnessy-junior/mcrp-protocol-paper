@@ -54,3 +54,15 @@ The review was adversarial and did not assume that stable identifiers, signature
 - No comparison has shown benefit over repositories plus open review or publish–review–curate systems.
 
 Disposition: **adequate as a conceptual architecture and outward-facing roadmap; not adequate as a standard, implementation claim, or evidence-backed peer-review intervention.**
+
+## Human direction after review
+
+Richard clarified that trust servers are not an originality claim and should be heavily cited as guiding motivation. The framework's central purpose is automation at scale and a living, self-updating scientific network.
+
+The architecture, protocol, landscape, roadmap, and evaluation questions were revised accordingly:
+
+- added direct reliance on Verifiable Credentials, SCITT/Rekor, Linked Data Notifications, Activity Streams, WebSub, COAR Notify, Event Notifications, and Nanopublications;
+- defined the living network as an append-only event history with incrementally recomputed projections;
+- specified automated ingestion, validation, deduplication, checkpoint recovery, dependency-impact candidates, policy recomputation, subscriptions, notifications, and review routing;
+- preserved the boundary that automation updates records and work queues but does not silently exercise human scientific authority;
+- added scale, convergence, latency, impact-accuracy, and judgment-laundering evaluation questions.

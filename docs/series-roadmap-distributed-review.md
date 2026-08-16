@@ -21,7 +21,7 @@ The current four-part series should complete MCRP's core logic before expanding 
 
 Distributed review then appears as a design opportunity enabled by portable, version-bound records—not as a capability already delivered.
 
-Keep four layers distinct: immutable SRR archive and resolution; the MCRP claim-review lifecycle; attestation transport, indexing, and federation; and client- or community-specific trust, reputation, routing, and curation. The latter layers extend around MCRP rather than silently becoming requirements of minimum MCRP.
+Keep four layers distinct: immutable SRR archive and resolution; the MCRP claim-review lifecycle; attestation transport, indexing, and federation; and client- or community-specific trust, reputation, routing, and curation. The latter layers extend around MCRP rather than silently becoming requirements of minimum MCRP. Trust servers and their component standards are guiding prior art, not an originality claim. The framework's practical objective is automation at scale and a scientific network that updates its indexes, review queues, impact assessments, and policy views as new signed events arrive.
 
 Use this framing consistently:
 
@@ -77,6 +77,8 @@ Hook: **The journal of a distributed review system may be less like a container 
 
 Introduce federated attestation registries—“trust servers” in shorthand—that index signed, scoped assertions about exact SRRs and claim versions. Explain inclusion receipts, auditable history, policies, server replication of records, discovery, revocation, and why hosting is not endorsement. The registry records and discovers attestations; it does not manufacture trust. Trust is a policy-specific view computed from typed records, issuer histories, declared roots, and exclusions. Federated registries need not agree on one status.
 
+Heavily ground this post in Verifiable Credentials, SCITT and transparency logs, Linked Data Notifications, Activity Streams, WebSub, COAR Notify, DocMaps, Nanopublications, ORCID, and existing publish–review–curate communities. MCRP is proposing a scientific profile and automation loop across them, not the registry concept itself.
+
 Short introduction:
 
 > A distributed review system needs more than immutable scientific releases. It needs interoperable places where independently produced review claims can be published, discovered, challenged, and revoked. We call these federated attestation registries—or, more loosely, trust servers. They record typed, signed statements about exact release and claim versions: who reports rerunning them, what was examined, what passed, what failed, what remained outside scope, and what later event made an earlier decision stale. The registry does not decide what is true, and inclusion is not endorsement. It makes “who said what about which version, under what policy, on what evidence?” available so communities and readers can construct explicit trust views of their own.
@@ -89,19 +91,27 @@ Sharper hook:
 
 Show why reviewer standing must remain domain-, method-, role-, conflict-, evidence-, and time-specific. Keep credit for what a contributor produced separate from later evidence about whether it worked or warranted scientific trust. Preserve inspectable event histories and let communities publish reproducible policy views. Cover Goodhart effects, prestige recursion, newcomer exclusion, dissent penalties, review rings, and bounded trust inference for the registries themselves.
 
-### Part 8: Review as a Distributed Workflow
+### Part 8: A Scientific Network That Keeps Updating
+
+**Hook:** Publication should add a version to the network, not freeze the network's understanding of it.
+
+Trace one event loop: a dependency changes; monitors emit a scoped impact candidate; registries update indexes; policy views mark affected claims `pending` or `stale`; routing services create review work; agents rerun bounded checks; qualified reviewers append new dispositions; subscribers receive the result. Historical approval remains immutable while current views update.
+
+Stress idempotency, checkpoints, causal references, delayed delivery, partitions, recomputation latency, and `unknown` states. “Self-updating” means automatic records and projections, not automatic scientific authority.
+
+### Part 9: Review as a Distributed Workflow
 
 Make review requests explicit and decomposable. Route execution, statistics, data, methods, interpretation, and adversarial challenge to qualified parties. Agents can inventory, execute, compare, monitor, and draft reports; humans retain scoped scientific authority under the present protocol.
 
-### Part 9: Disagreement Is a Scientific Product
+### Part 10: Disagreement Is a Scientific Product
 
 Preserve `supports`, `bounds`, `contradicts`, `fails-to-reproduce`, `narrows`, and `unassessed` as distinct records. Consensus is a computed view, never destructive aggregation.
 
-### Part 10: How the Trust Layer Fails
+### Part 11: How the Trust Layer Fails
 
 Cover Sybil farms, reciprocal endorsement, server capture, key compromise, selective revocation, replay, reputation laundering, denial of discovery, privacy, retaliation, and coordinated false challenges. The answer is defence in depth, not “decentralization” as a cure.
 
-### Part 11: How We Would Know This Helps
+### Part 12: How We Would Know This Helps
 
 End the numbered arc with a preregistered evaluation contract. Compare against repository-plus-open-review and publish–review–curate baselines; measure false acceptance, defect localization, review time, reviewer agreement, stale-decision detection, attack resistance, cost, privacy harm, and newcomer participation.
 
