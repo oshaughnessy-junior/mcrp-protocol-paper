@@ -1,7 +1,7 @@
 {
   "schema": "openclaw.scientific-writing.packet.v1",
-  "artifact_id": "mcrp-distributed-review-series-seeds-2026-08-16",
-  "purpose": "Bootstrap mature outward-facing drafts for Parts 2 through 12 of the MCRP distributed-review sequence.",
+  "artifact_id": "mcrp-distributed-review-series-drafts-2026-08-21",
+  "purpose": "Govern the mature private drafts for Parts 2 through 12 of the MCRP distributed-review sequence.",
   "audience": "Technically literate researchers, research-software practitioners, reviewers, and scholarly-infrastructure builders.",
   "section_type": "linked explanatory blog sequence",
   "target_latex_fragments": ["not-applicable-blog-series"],
@@ -19,7 +19,7 @@
     "research/distributed-review-architecture-review-2026-08-16.md",
     "evaluation/research-questions.md"
   ],
-  "retrieval_capability": "bounded primary-source landscape already assembled; no new research-librarian retrieval required for seed prose",
+  "retrieval_capability": "bounded primary-source landscape already assembled; 16 cited URLs returned HTTP 200 on 2026-08-21, while official DocMaps and ORCID support URLs returned automation-blocking HTTP 403 and remain supported by the previously verified landscape packet",
   "claim_ledger": "research/series-seeds/logical-claims-audit.json",
   "bibliography_inputs": [
     "W3C Verifiable Credentials Data Model 2.0",
@@ -55,5 +55,18 @@
     "MCRP solves trust or establishes scientific truth.",
     "MCRP has demonstrated interoperability, scale, governance legitimacy, capture resistance, or better review outcomes.",
     "A signature or registry receipt proves competence, independence, or scientific adequacy."
-  ]
+  ],
+  "maturation_checkpoint": {
+    "date": "2026-08-21",
+    "publication_status": "private-not-approved",
+    "draft_count": 11,
+    "body_word_count_range": [1014, 1265],
+    "required_sections": ["worked example", "limitations", "bridge or series close"],
+    "readiness_report": "research/series-seeds/readiness-report-2026-08-21.md",
+    "remaining_human_decisions": [
+      "Choose whether any private draft should enter an outward-facing approval process.",
+      "Choose publication order and cadence if approval is later granted.",
+      "Approve, revise, or reject the proposed evaluation thresholds before preregistration."
+    ]
+  }
 }
