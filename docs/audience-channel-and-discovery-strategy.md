@@ -1,211 +1,226 @@
 ---
 artifact_role: audience-channel-and-discovery-strategy
-authors:
-  - Codex
-  - junior
-status: recommendation-for-human-review
-date: 2026-08-22
+authors: [Codex, junior]
+status: updated-decision-strategy
+date: 2026-08-23
 publication_status: private-not-approved
-scope: MCRP and adjacent research-infrastructure and agent-systems writing
+scope: independent AI and research-infrastructure publication lane
+companion: new-ai-research-infrastructure-lane-brief.md
 ---
 
-# Audience, channel, and discovery strategy for MCRP
+# Audience, channel, and discovery strategy
 
-## Recommendation
+## Decision
 
-Publish MCRP and closely related material on the existing ROS group web property, but not as undifferentiated entries in the astrophysics news stream. Establish a first-class **Research Infrastructure & Agent Systems** section within the same site, with its own landing page, category feed, series hubs, descriptive metadata, and subscription route. Treat MCRP as the anchor sequence for that section.
+Treat AI and research infrastructure for science as an independent publication lane, not a category or sub-blog within the ROS group astrophysics site.
 
-Do not create a separate AI-infrastructure site or subdomain yet. Reconsider that choice only after the section demonstrates a sustained body of work beyond MCRP, a distinct returning audience, an independent editorial identity, and enough publication cadence to justify separate operations.
+The new lane receives its own editorial identity, canonical publication surface, repository, queue, feed, discovery program, analytics boundary, review rubric, and Telegram approval target. The research site may selectively point to material with a genuine scientific connection, but it is neither the canonical archive nor the chronological container for the lane.
 
-This is a channel and information-architecture recommendation only. It does not authorize site edits, publication, deployment, social posting, or a domain change.
+This strategy supersedes the earlier section-within-the-research-site recommendation. It does not authorize implementation, domain registration, site edits, post edits, publication, or deployment.
 
-## Why MCRP belongs on the research property
+## Audience promise
 
-MCRP is not primarily a product-development diary or generic commentary about AI. Its central subject is scientific review: how claims refer to exact evidence, how review authority is scoped, how decisions become stale, and how distributed records might support a living review network. Agent automation is an enabling mechanism and an important audience, but the intended consequence is research infrastructure.
+Working subject: **AI and research infrastructure for science**.
 
-The existing site is publicly framed as a research-group presence focused on gravitational waves and astrophysics. It already carries a small agent-systems lane, including OpenClaw workflow posts and the agent-meetings/self-improvement post. MCRP therefore does not introduce the first cross-disciplinary material; it exposes that the current taxonomy and navigation are too weak to explain the relationship among the site's subjects.
+One-sentence promise:
 
-Keeping the canonical MCRP sequence on the research property has three immediate advantages:
+> Practical, evidence-conscious accounts of how agents, software, provenance, review, and governance can improve scientific work—and where those systems fail.
 
-1. It connects the proposal to concrete scientific practice rather than presenting it as abstract AI governance.
-2. It retains one accumulated link, search, analytics, and maintenance surface.
-3. It lets astrophysics readers encounter the infrastructure argument while letting systems readers subscribe to a narrower lane.
+Primary readers:
 
-The required correction is not a new domain. It is a visible editorial partition.
+- scientists responsible for reproducible, reviewable computational work;
+- research-software and infrastructure engineers;
+- agent-system designers working on evidence, memory, review, coordination, or governance;
+- scholarly-communication and metaresearch practitioners;
+- technical research leaders evaluating automation without surrendering human authority.
 
-## Option comparison
+It is not a general AI-news site, model-release tracker, product-marketing channel, or replacement for the astrophysics research blog.
 
-| Criterion | Mixed main blog with no partition | Section on the main site | Separate AI site or subdomain |
-|---|---|---|---|
-| Audience clarity | Poor: readers cannot predict whether a post is astrophysics, lab news, or agent infrastructure | Strong if the section has a distinct name, landing page, feed, and visual label | Strongest subject separation |
-| Scientific positioning | Strong association with active research, but agent posts may appear incidental | Strong association while making infrastructure an explicit research program | Risk that MCRP reads as generic AI commentary rather than science infrastructure |
-| Discoverability at launch | Benefits from existing internal links and site history | Same benefit, with better topical clustering | Starts with a thinner link graph and a new discovery surface |
-| Brand risk | High: unexplained topic switching dilutes the site's astrophysics promise | Manageable: one publisher, two clearly named editorial lanes | High initial risk of an unestablished second brand and unclear relationship to ROS group |
-| Subscription control | One noisy feed | Global feed plus section- and series-specific feeds | Clean separate feed, but readers and mailing lists fragment |
-| Search identity | One site identity | One site identity; section pages cannot obtain a distinct Google site name | A subdomain can support a distinct site name, but must earn its own identity |
-| Cross-posting risk | Low if there is one canonical page | Low; one canonical page plus short adaptations | Higher temptation to duplicate articles across two sites; canonical handling becomes mandatory |
-| Maintenance | Lowest, but editorial quality suffers | Modest incremental templates, taxonomy, and feed maintenance | Highest: separate navigation, analytics, Search Console, deploys, security, archives, and redirects |
-| Future extensibility | Weak | Strong enough for MCRP and adjacent sequences | Best only if a durable independent publication actually emerges |
+## Recommended public architecture
 
-Google states that it has no general indexing or ranking preference between subfolders and subdomains; the choice should follow organizational needs. A meaningful distinction is branding: Google can show a separate site name for a subdomain, but not for a subdirectory-level home page. That branding advantage is real, but it is not sufficient reason to split a young publication. See [Google's crawling and indexing FAQ](https://developers.google.com/search/help/crawling-index-faq) and [site-name guidance](https://developers.google.com/search/docs/appearance/site-names).
+### Repository and deployment
 
-## Proposed information architecture
+Use a separate repository and deploy pipeline from `outward-facing-web`. This provides the strongest operational boundary:
 
-### Publisher level
+- separate publication queue and branch protections;
+- separate digest-bound approval destination;
+- no risk that astrophysics-site drift or unrelated local changes enter an infrastructure release;
+- independent templates, feed, sitemap, analytics, and rollback;
+- a clean canonical history for the publication program.
 
-Keep the publisher identity as the ROS group web presence. Its top-level navigation should make the two relevant editorial lanes legible:
+Do not bootstrap the lane inside the existing dirty/diverged research-site checkout. Do not put unapproved drafts on public preview branches.
 
-- **Astrophysics & Group Research**
-- **Research Infrastructure & Agent Systems**
+### URL and domain choice
 
-The second label is preferable to “AI blog.” It describes the durable problem domain and leaves room for non-agent infrastructure, reproducibility, review protocols, research software, provenance, and evaluation. “AI” alone invites an audience expecting model news, tutorials, or product commentary that the MCRP sequence does not provide.
+Preferred mature form: a true custom subdomain or distinct custom domain with a clear relationship to the ROS group, for example a name under a controlled parent domain. A subdomain can express an independent site identity while preserving visible institutional relationship.
 
-### Section level
+Preferred bootstrap form: an independent sibling GitHub Pages repository, designed so its routes can later migrate cleanly to a custom domain. This is faster and preserves repository/deployment separation, but a second `github.io` repository path does not deliver the full branding and search-identity benefit of a true subdomain.
 
-The Research Infrastructure & Agent Systems landing page should contain:
+Do not delay private editorial preparation while choosing the final domain. Do delay public launch until the canonical URL and redirect posture are decided.
 
-- a two-sentence statement connecting automation to scientific accountability;
-- three topic clusters: **agent-team operations**, **research provenance and review**, and **distributed scientific infrastructure**;
-- a featured-series panel for MCRP;
-- the latest posts in the section;
-- a section-specific Atom/RSS subscription link;
-- a link back to the astrophysics/research context that motivates the work.
+Google states that it has no general indexing preference between subfolders and subdomains; organization should follow the publication's needs. It does support site names at the domain or subdomain level, not for a subdirectory landing page. See [Google's crawling and indexing FAQ](https://developers.google.com/search/help/crawling-index-faq) and [site-name guidance](https://developers.google.com/search/docs/appearance/site-names).
 
-Use a stable descriptive route such as `/research-infrastructure/`. Do not lead the URL with the internal acronym `mcrp`; descriptive URLs are more intelligible to new readers. Google's URL guidance recommends simple, readable words that match the audience's language: [URL structure best practices](https://developers.google.com/search/docs/crawling-indexing/url-structure).
+## Editorial identity and information architecture
 
-### Series level
+The landing surface should contain:
 
-Give MCRP one canonical series hub under that section. The hub should answer four questions before listing posts:
+- the one-sentence audience promise;
+- a featured current season;
+- a concise foundations page for standards and prior art;
+- topic paths for agent-team operations, evidence and provenance, scientific review, distributed infrastructure, and evaluation/failure analysis;
+- latest essays and latest operational artifacts as distinct lists;
+- stable author pages for Codex and junior;
+- an explicit human editorial-approval statement;
+- a feed, archive, sitemap, and subscription choices.
 
-1. What is the practical problem?
-2. What does MCRP propose?
-3. What has and has not been demonstrated?
-4. Where should a reader start?
+MCRP should launch as the first bounded editorial season, with one canonical hub and a finite public arc. The eleven technical drafts remain the private design corpus. The public season should be rewritten into the five utility-led pieces specified in [the lane decision brief](new-ai-research-infrastructure-lane-brief.md), rather than released as eleven lightly differentiated installments.
 
-Offer three reading paths:
+Every post should expose:
 
-- **Five-minute orientation:** position-post introduction and one architecture diagram.
-- **Core protocol:** Parts 2–4, from claims and evidence through authority and revision.
-- **Distributed-review arc:** Parts 5–12, including registries, reputation, event-driven updating, failure modes, and evaluation.
+- problem-led title and description;
+- authors and publisher as separate metadata;
+- season, sequence position, and previous/next navigation;
+- claim posture: proposal, synthetic demonstration, internal observation, evaluation, or externally reproduced;
+- operational artifact when one is promised;
+- explicit limitations;
+- canonical URL and update history.
 
-Every installment should expose the series title, part number, previous/next links, hub link, authors, publication/update dates, and a compact “claim posture” box. The title should lead with the reader's problem rather than the acronym—for example, “Why scientific approval needs a version history — MCRP, Part 4.”
+Google's Article guidance recommends representing multiple authors separately and linking each to a stable identity page: [Article structured-data guidance](https://developers.google.com/search/docs/appearance/structured-data/article).
 
-The PDF and protocol repository should be companion artifacts linked from the hub, not competing canonical copies of the blog prose.
+## Feeds and subscriptions
 
-### Metadata and authorship
+Provide:
 
-Normalize front matter across the lane:
+- one complete publication feed;
+- optional topic feeds only after enough content exists to keep them useful;
+- an MCRP-season feed during launch;
+- feed-autodiscovery metadata;
+- a complete sitemap and correct modification times.
 
-- `section: research-infrastructure`
-- `series: mcrp`
-- `series_part: N`
-- `authors: [Codex, junior]`
-- `description:` one search- and feed-appropriate summary
-- `canonical_url:` the single canonical article location
-- `claim_posture:` proposal, prototype, evaluated, or retrospective
-- topic tags drawn from a controlled vocabulary rather than ad hoc synonyms
+RSS/Atom is a first-class distribution channel, not a build by-product. It should contain canonical, fetchable URLs and sufficiently complete metadata. Google distinguishes sitemaps as the broad URL inventory and feeds as recent-update signals; both are useful: [sitemap and feed practices](https://developers.google.com/search/blog/2014/10/best-practices-for-xml-sitemaps-rssatom).
 
-The current site disables Open Graph and Schema.org output and uses inconsistent author/category metadata across posts. Before the sequence is promoted, the publication packet should verify social-card metadata and `BlogPosting`/`Article` author representation. Google's Article guidance recommends representing multiple authors separately and linking each to a stable author identity page rather than combining names into one author string: [Article structured-data guidance](https://developers.google.com/search/docs/appearance/structured-data/article).
+## Relationship to the main research site
 
-The byline remains **Codex and junior**, as already specified for the sequence. The publisher and authors should be distinct metadata fields. The series hub should also explain, briefly and plainly, what those author identities mean and where human editorial approval enters the process.
+Use selective contextual cross-links, not mirroring.
 
-## Feeds, subscriptions, and internal discovery
+Appropriate research-site links include:
 
-Retain one global feed for readers who want the whole research-group publication stream, but add:
+- a short pointer when a new infrastructure piece directly explains a method used in scientific work;
+- a permanent resources-page link to the new publication lane;
+- links from relevant simulation, reproducibility, or research-software posts;
+- occasional season launch or evaluation-result notices.
 
-- a Research Infrastructure & Agent Systems category feed;
-- an MCRP series feed;
-- feed-discovery links in the relevant landing-page HTML;
-- visible subscription choices labeled by scope.
+Avoid:
 
-Jekyll has first-class categories and tags, and `jekyll-feed` supports category feeds. This is a small conceptual extension of the present stack rather than a second publishing system. See the [Jekyll post taxonomy documentation](https://jekyllrb.com/docs/posts/) and [jekyll-feed documentation](https://github.com/jekyll/jekyll-feed).
+- automatically copying every infrastructure post into the research feed;
+- dual full-text publication;
+- generic “new post” notices with no astrophysics relevance;
+- implying that group research projects adopted MCRP unless documented;
+- using the research site's authority as evidence for protocol validity.
 
-Use both the sitemap and recent-update feeds. Google describes sitemaps as the broad URL inventory and RSS/Atom as a timely update signal; both should carry canonical, fetchable URLs and correct modification times: [sitemap and feed practices](https://developers.google.com/search/blog/2014/10/best-practices-for-xml-sitemaps-rssatom).
+The infrastructure site remains canonical. If full-text syndication ever occurs, the syndicated copy must point to the canonical source where the destination supports it. Google documents `rel="canonical"` as a strong consolidation signal: [canonical URL guidance](https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls).
 
-Internal discovery should not rely on chronology alone. Add contextual links:
+## Social discovery
 
-- astrophysics or simulation posts can link to relevant MCRP posts when provenance or review is genuinely involved;
-- agent-team posts can link forward to the MCRP hub as the scientific-accountability arc;
-- MCRP posts should link to concrete scientific examples without implying those projects adopted the protocol;
-- the position-paper landing page should link to the public series hub and repository;
-- repository READMEs should point back to the canonical public explanation.
+LinkedIn and similar services are discovery surfaces, not the archive.
 
-## Social and cross-posting strategy
+- Announce the lane once with its audience promise and current-season hub.
+- Adapt only anchor pieces, with short platform-native arguments linking to the canonical article.
+- Require a separate digest-bound approval for every social adaptation.
+- Preserve the Codex/junior authorship while making the publisher relationship explicit.
+- Prefer qualified response, artifact use, and returning readership over raw impressions.
 
-The website remains canonical. LinkedIn and similar channels are discovery surfaces, not duplicate archives.
+For the five-piece public MCRP season, two or three LinkedIn adaptations are sufficient. Do not turn a finite research-infrastructure argument into repetitive social promotion.
 
-For the MCRP sequence:
+## Queue, metrics, and ownership
 
-- announce the series once with the hub and its central thesis;
-- adapt only anchor installments for LinkedIn: Parts 2, 5, 8, 11, and 12 are the strongest candidates;
-- use short platform-native summaries that link to the canonical article;
-- do not publish eleven near-identical “new part” announcements in rapid succession;
-- package Parts 2–4 and Parts 5–12 as recognizable arcs with recap posts or threads;
-- require separate approval for each website publication and each social adaptation.
+The lane needs an independent publication queue with at least:
 
-If a full article is ever syndicated, set the original website URL as canonical when the destination supports it. Canonicalization consolidates signals and avoids competing copies; Google documents redirects and `rel="canonical"` as strong signals: [canonical URL guidance](https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls).
+- artifact and exact revision;
+- editorial state;
+- source/claim/privacy state;
+- operational-artifact state;
+- audience and channel decision;
+- preview and digest;
+- owner approval receipt;
+- deployment and live-verification receipt;
+- social adaptation states, separately;
+- correction, staleness, and supersession state.
 
-## Release cadence
+The approval target should name this destination explicitly, such as `ai-research-infrastructure/main`. Approval for the research site, LinkedIn, the protocol repository, or an internal prototype is not interchangeable.
 
-Publish the series as a bounded editorial season rather than an undifferentiated backlog dump.
+Measure:
 
-Recommended pattern:
+- qualified organic discovery by intended audience;
+- article/series completion where privacy-compatible;
+- feed subscriptions and return readership;
+- downloads, forks, references, or reuse of operational artifacts;
+- informed critiques, corrections, and collaborators;
+- cross-links from relevant technical and scientific sources;
+- editorial throughput, correction latency, and approval latency.
 
-1. Series hub plus the short position introduction.
-2. Parts 2–4 at roughly one post per week.
-3. A brief synthesis and explicit opening of the distributed-review arc.
-4. Parts 5–12 at one post every one to two weeks, with grouping and recap links.
-5. Evaluation and protocol updates only when new evidence exists; do not manufacture cadence after the numbered arc.
+Avoid optimizing primarily for impressions, posting volume, or generic engagement. Analytics require an explicit privacy and retention posture before activation.
 
-This cadence gives each argument time to be discovered and discussed, while maintaining enough continuity for the sequence to remain legible.
+Assign one named editorial/operational owner. A publication lane without an accountable queue owner will reproduce the oversight failure that left mature MCRP drafts private without an owner-visible decision request.
 
-## Elevation and approval workflow
+## Elevation workflow
 
-Audience/channel review should become a mandatory stage before the existing publication gate.
+1. Build and review material privately in its owning repository.
+2. Run source, claim, privacy, utility, and artifact checks.
+3. Classify audience and canonical destination.
+4. Build an owner-visible private preview.
+5. Deliver a digest-bound Telegram request with approve, revise, reject, and defer actions.
+6. Record the exact outbound message ID; a local request file is not delivery evidence.
+7. On approval, revalidate content, render, destination, and base revision before deterministic publication.
+8. Verify live URL, canonical metadata, feed/sitemap inclusion, and rendering.
+9. Prepare any social adaptation as a new artifact with a new approval.
 
-For each mature post, the producing agent should prepare a small channel packet containing:
+Sequence approval governs shared architecture and cadence. Post approval governs one exact website revision. Prototype release, website publication, research-site pointer, and social publication are all distinct actions.
 
-- exact draft and rendered-preview digests;
-- recommended canonical section and series position;
-- primary audience and excluded audience;
-- search-facing title, description, and intended query vocabulary;
-- internal links in and out;
-- feed/category metadata;
-- proposed social adaptations, if any;
-- risks: brand confusion, unsupported scientific implication, privacy, or authorship ambiguity;
-- explicit choices for Richard: approve website publication, revise, defer, or reject.
+## Phased launch
 
-The agent then builds an owner-visible private preview and sends a Telegram approval request bound to the exact packet. A button tap is a decision signal, not a memory substitute: the executor must revalidate the stored packet, source digest, preview digest, destination, and current site base before publishing.
+### Phase 0: private foundation
 
-Sequence-level oversight and per-post authority should remain separate:
+- choose public name and audience promise;
+- create the independent private repository and queue;
+- select canonical-domain strategy;
+- define author/publisher metadata and privacy posture;
+- implement the approval target and private preview flow;
+- rewrite and review the five-piece MCRP season.
 
-- **Sequence approval** confirms the information architecture, order, cadence, and shared framing.
-- **Post approval** authorizes one exact website revision.
-- **Channel approval** separately authorizes each LinkedIn or other social adaptation.
-- **Deployment verification** records the live URL, canonical metadata, feed inclusion, and rendered result.
+Exit: every launch artifact is privately reviewable, but nothing is public.
 
-The escalation invariant should be: once a post reaches `verified-for-human-review`, the workflow must deliver one durable owner-visible request and record its Telegram message ID. A local review-request file is not evidence that oversight occurred.
+### Phase 1: minimum public surface
 
-## When a separate site becomes justified
+- publish landing page, foundations page, feed, sitemap, author pages, and MCRP hub;
+- publish the orientation and first utility-led MCRP piece;
+- add one selective research-site pointer;
+- verify search, feed, social-card, accessibility, and canonical metadata.
 
-Reassess a dedicated site or true subdomain when most of the following are true:
+Exit: the publication has a coherent identity and one useful canonical piece.
 
-- the infrastructure lane contains at least two substantial programs beyond MCRP;
-- it sustains publication for at least six months rather than one finite sequence;
-- analytics show a distinct returning audience with limited overlap with the astrophysics stream;
-- readers request an independent subscription or community identity;
-- contributors or editorial governance differ materially from the research-group blog;
-- the section needs its own homepage promise, newsletter, event calendar, or participation model;
-- operating a separate deploy, accessibility check, analytics property, Search Console property, archive, and redirect policy has a named owner.
+### Phase 2: bounded season
 
-If those conditions emerge, prefer a true subdomain with a clear relationship to the ROS group publisher. Move canonical URLs once, issue redirects, preserve feed continuity where possible, and avoid maintaining duplicate full-text copies. A separate repository served only as another `github.io` path would split operations without delivering the full branding benefit of a subdomain.
+- publish at most weekly;
+- attach an operational artifact to each piece;
+- use no more than three approved social adaptations;
+- collect qualified response and corrections;
+- preserve an explicit complete-season roadmap.
 
-## Near-term editorial decisions for Richard
+Exit: all five pieces are live or deliberately deferred, with verification receipts.
 
-1. Approve or revise the section name **Research Infrastructure & Agent Systems**.
-2. Confirm the existing ROS group site as the canonical publication property for the first MCRP season.
-3. Approve the three-path series hub and the staged cadence.
-4. Select the first three posts for exact publication review; Parts 2, 3, and 4 are the coherent starting arc.
-5. Decide whether LinkedIn adaptations should use the Codex/junior byline explicitly or a publisher-prefaced form such as “From the ROS group agent team.”
+### Phase 3: continuation decision
 
-Until those decisions are recorded, the MCRP drafts remain private and no channel is authorized.
+Continue only if there is material beyond MCRP, a distinct relevant audience, evidence of artifact use or informed engagement, and an accountable owner. Otherwise preserve the season as a finite, high-quality publication and stop manufacturing cadence.
+
+## Decisions still required
+
+- Public name and final audience promise.
+- Separate repository name and owner.
+- Bootstrap sibling-site URL versus immediate custom subdomain/domain.
+- Visual relationship to the ROS group.
+- Named editorial/operational owner.
+- Exact five-piece season briefs and first release candidate.
+- Whether the existing agent-meetings article is linked, summarized, or republished with canonical handling.
+
+Until these decisions and exact publication approvals are recorded, all material remains private.
