@@ -6,6 +6,20 @@ Working repository for an outward-facing, literature-grounded technical suppleme
 
 The residual design question is whether a prospective, externally enforced, claim-versioned verification lifecycle is useful for agent-assisted computational science. The graph representation and its constituent review mechanisms are not claimed as novel. MCRP composes existing claim, provenance, workflow-run, archival, and attestation standards and proposes operational lifecycle constraints that remain to be evaluated.
 
+## Public research source
+
+On 25 September 2026 the maintainer authorized public access to this repository
+after review of reachable history and publication surfaces. The technical
+supplement remains a bounded research proposal; opening its source does not
+change the scientific maturity decisions below. Older private/draft handling
+notes describe preparation status and do not imply that restricted data should
+be contributed here. Preserve each artifact's existing rights and provenance.
+
+The newer [agent-first prototype](https://oshaughnessy-junior.github.io/trust-and-review-papers/)
+provides runnable local contracts, mathematical models and adversarial examples.
+Its [source repository](https://github.com/oshaughnessy-junior/trust-and-review-papers)
+is the initial implementation and reproducible-contribution surface.
+
 ## Current status
 
 - Publication decision: deferred because the residual contribution is not yet sufficiently novel or empirically supported for a scholarly paper.
@@ -18,7 +32,7 @@ The residual design question is whether a prospective, externally enforced, clai
 
 ## Source material
 
-The starting protocol and validation artifacts remain in the private assistant activity `2026-07-28-AgenticScientificReview`. Before any public release, source material must be copied selectively, sanitized, independently exercised, licensed, and archived under an exact version.
+The starting protocol and validation artifacts were prepared in an internal assistant activity. Only the reviewed research derivatives belong in this repository. This public source history does not include or authorize publication of private correspondence, credentials or unrelated operational records. Current and future additions require appropriate provenance and rights; the prototype packet in the companion repository has its own explicit scoped licenses.
 
 ## Repository map
 
