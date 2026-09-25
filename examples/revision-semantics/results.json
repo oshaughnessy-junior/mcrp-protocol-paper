@@ -1,0 +1,32 @@
+{
+  "data_revision": {
+    "dirty": [
+      "data"
+    ],
+    "affected": [
+      "claim",
+      "data",
+      "run"
+    ],
+    "affected_claims": [
+      "claim"
+    ],
+    "meaning": "needs-reassessment; no claim-truth verdict"
+  },
+  "removed_lineage": {
+    "dirty": [
+      "claim",
+      "run"
+    ],
+    "affected": [
+      "claim",
+      "run"
+    ],
+    "affected_claims": [
+      "claim"
+    ],
+    "meaning": "needs-reassessment; no claim-truth verdict"
+  },
+  "historical_release_unchanged": true,
+  "status": "Synthetic revision semantics only; not historical verifier output."
+}

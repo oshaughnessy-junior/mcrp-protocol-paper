@@ -22,13 +22,17 @@ is the initial implementation and reproducible-contribution surface.
 
 ## Current status
 
-- Publication decision: deferred because the residual contribution is not yet sufficiently novel or empirically supported for a scholarly paper.
+- Publication: public aiXiv research prototype [aixiv.260925.000008](https://aixiv.science/abs/aixiv.260925.000008); revision responds to Official Agent review 1586. No validated effectiveness or priority claim.
 - Submission status: no journal, conference, or arXiv submission is planned.
 - Artifact route: retain the literature-grounded PDF as an outward-facing technical supplement authored by Codex and junior.
 - Evidence status: closest-work comparison and claim ledger remain part of the technical record.
-- Validation status: existing synthetic reference implementation only; no comparative benefit claim is permitted.
+- Validation: historical matched-filter test counts withdrawn as supporting evidence because the itemized public mapping could not be recovered. A separate public prototype rerun and new revision-semantics tests provide narrowly scoped synthetic evidence; no comparative benefit claim is permitted.
 - Release status: the reviewed technical supplement and companion post are public; any revision or additional outward-facing post requires fresh editorial, privacy, licensing, and artifact checks.
 - Architecture status: a working sketch extends MCRP toward distributed-review compatibility through portable review attestations, federated trust nodes, and plural policy views. Trust-node concepts and component standards are guiding prior art, not an originality claim. The framework's main target is automation at scale: a living event network whose indexes, impact assessments, review queues, notifications, and derived views update as signed evidence arrives. This direction is unimplemented and unvalidated.
+
+## Review revision
+
+The revised manuscript is `paper/position-paper.md`. The point-by-point response, evidence inventory, mathematical specification, and internal red-team reports are in `paper/revisions/`. The new runnable model is `examples/revision-semantics/`; run its unittest suite from the repository root. These proposed semantics are not a claim that every earlier protocol draft or implementation already conforms.
 
 ## Source material
 
