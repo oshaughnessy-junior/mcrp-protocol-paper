@@ -1,0 +1,27 @@
+{
+  "discarded_paths": [
+    ".//mcrp:releaseIdentity",
+    ".//mcrp:claims",
+    ".//mcrp:decisions",
+    ".//mcrp:edges",
+    "payload/input.txt/mcrp:sha256",
+    "#claim-mean/mcrp:scope",
+    "#claim-mean/mcrp:requires",
+    "#claim-mean/@type:mcrp:Claim",
+    "#decision-review/mcrp:actor",
+    "#decision-review/mcrp:outcome",
+    "#decision-review/mcrp:policy",
+    "#decision-review/mcrp:validUntil",
+    "#decision-review/@type:mcrp:Decision",
+    "#edge-0/mcrp:source",
+    "#edge-0/mcrp:target",
+    "#edge-0/mcrp:kind",
+    "#edge-0/@type:mcrp:Edge",
+    "#edge-1/mcrp:source",
+    "#edge-1/mcrp:target",
+    "#edge-1/mcrp:kind",
+    "#edge-1/@type:mcrp:Edge",
+    "./conformsTo:local-profile-claim-withdrawn"
+  ],
+  "semantic_result": "No MCRP reliance, authority, scope, digest, or invalidation semantics preserved by this consumer."
+}

@@ -1,0 +1,258 @@
+{
+  "schema": "mcrp-resource-envelope/0.1",
+  "context": {
+    "workload_id": "REPLACE: exact claim/release/scope/workload identity",
+    "mode": "full",
+    "interval_start": "2026-01-01T00:00:00Z",
+    "interval_end": "2026-01-01T00:00:00Z",
+    "boundary_id": "REPLACE: versioned accounting manifest identity",
+    "boundary_description": "REPLACE: included hosts/runs/roles and exclusions; include failed runs",
+    "collector": "REPLACE: accountable recorder and instrument versions",
+    "currency_basis": "REPLACE: USD price date, taxes, exchange-rate source and billing interval",
+    "requirements_vocabulary": "REPLACE: versioned conjunction-only predicate definitions"
+  },
+  "coordinates": {
+    "C": {
+      "cpu_device_hours": {
+        "status": "unavailable",
+        "unit": "device-hour",
+        "bounds": null,
+        "requirements": null,
+        "method": "",
+        "sources": [],
+        "reason": "Template only; no measurements collected",
+        "activity_ids": []
+      },
+      "gpu_device_hours": {
+        "status": "unavailable",
+        "unit": "device-hour",
+        "bounds": null,
+        "requirements": null,
+        "method": "",
+        "sources": [],
+        "reason": "Template only; no measurements collected",
+        "activity_ids": []
+      },
+      "wall_time": {
+        "status": "unavailable",
+        "unit": "second",
+        "bounds": null,
+        "requirements": null,
+        "method": "",
+        "sources": [],
+        "reason": "Template only; no measurements collected",
+        "activity_ids": []
+      },
+      "peak_memory": {
+        "status": "unavailable",
+        "unit": "byte",
+        "bounds": null,
+        "requirements": null,
+        "method": "",
+        "sources": [],
+        "reason": "Template only; no measurements collected",
+        "activity_ids": []
+      }
+    },
+    "D": {
+      "input_bytes": {
+        "status": "unavailable",
+        "unit": "byte",
+        "bounds": null,
+        "requirements": null,
+        "method": "",
+        "sources": [],
+        "reason": "Template only; no measurements collected",
+        "activity_ids": []
+      },
+      "transferred_bytes": {
+        "status": "unavailable",
+        "unit": "byte",
+        "bounds": null,
+        "requirements": null,
+        "method": "",
+        "sources": [],
+        "reason": "Template only; no measurements collected",
+        "activity_ids": []
+      },
+      "peak_storage": {
+        "status": "unavailable",
+        "unit": "byte",
+        "bounds": null,
+        "requirements": null,
+        "method": "",
+        "sources": [],
+        "reason": "Template only; no measurements collected",
+        "activity_ids": []
+      },
+      "retained_bytes": {
+        "status": "unavailable",
+        "unit": "byte",
+        "bounds": null,
+        "requirements": null,
+        "method": "",
+        "sources": [],
+        "reason": "Template only; no measurements collected",
+        "activity_ids": []
+      },
+      "retention_duration": {
+        "status": "unavailable",
+        "unit": "second",
+        "bounds": null,
+        "requirements": null,
+        "method": "",
+        "sources": [],
+        "reason": "Template only; no measurements collected",
+        "activity_ids": []
+      }
+    },
+    "P": {
+      "requirements": {
+        "status": "unavailable",
+        "unit": "conjunctive-requirements",
+        "bounds": null,
+        "requirements": null,
+        "method": "",
+        "sources": [],
+        "reason": "Template only; no measurements collected",
+        "activity_ids": []
+      }
+    },
+    "X": {
+      "requirements": {
+        "status": "unavailable",
+        "unit": "conjunctive-requirements",
+        "bounds": null,
+        "requirements": null,
+        "method": "",
+        "sources": [],
+        "reason": "Template only; no measurements collected",
+        "activity_ids": []
+      },
+      "access_wait": {
+        "status": "unavailable",
+        "unit": "second",
+        "bounds": null,
+        "requirements": null,
+        "method": "",
+        "sources": [],
+        "reason": "Template only; no measurements collected",
+        "activity_ids": []
+      }
+    },
+    "H": {
+      "setup": {
+        "status": "unavailable",
+        "unit": "person-hour",
+        "bounds": null,
+        "requirements": null,
+        "method": "",
+        "sources": [],
+        "reason": "Template only; no measurements collected",
+        "activity_ids": []
+      },
+      "review": {
+        "status": "unavailable",
+        "unit": "person-hour",
+        "bounds": null,
+        "requirements": null,
+        "method": "",
+        "sources": [],
+        "reason": "Template only; no measurements collected",
+        "activity_ids": []
+      },
+      "operation": {
+        "status": "unavailable",
+        "unit": "person-hour",
+        "bounds": null,
+        "requirements": null,
+        "method": "",
+        "sources": [],
+        "reason": "Template only; no measurements collected",
+        "activity_ids": []
+      },
+      "repair": {
+        "status": "unavailable",
+        "unit": "person-hour",
+        "bounds": null,
+        "requirements": null,
+        "method": "",
+        "sources": [],
+        "reason": "Template only; no measurements collected",
+        "activity_ids": []
+      },
+      "administration": {
+        "status": "unavailable",
+        "unit": "person-hour",
+        "bounds": null,
+        "requirements": null,
+        "method": "",
+        "sources": [],
+        "reason": "Template only; no measurements collected",
+        "activity_ids": []
+      }
+    },
+    "A": {
+      "requests": {
+        "status": "unavailable",
+        "unit": "request",
+        "bounds": null,
+        "requirements": null,
+        "method": "",
+        "sources": [],
+        "reason": "Template only; no measurements collected",
+        "activity_ids": []
+      },
+      "input_tokens": {
+        "status": "unavailable",
+        "unit": "token",
+        "bounds": null,
+        "requirements": null,
+        "method": "",
+        "sources": [],
+        "reason": "Template only; no measurements collected",
+        "activity_ids": []
+      },
+      "output_tokens": {
+        "status": "unavailable",
+        "unit": "token",
+        "bounds": null,
+        "requirements": null,
+        "method": "",
+        "sources": [],
+        "reason": "Template only; no measurements collected",
+        "activity_ids": []
+      },
+      "tool_calls": {
+        "status": "unavailable",
+        "unit": "call",
+        "bounds": null,
+        "requirements": null,
+        "method": "",
+        "sources": [],
+        "reason": "Template only; no measurements collected",
+        "activity_ids": []
+      },
+      "runtime": {
+        "status": "unavailable",
+        "unit": "second",
+        "bounds": null,
+        "requirements": null,
+        "method": "",
+        "sources": [],
+        "reason": "Template only; no measurements collected",
+        "activity_ids": []
+      },
+      "billed_cost": {
+        "status": "unavailable",
+        "unit": "USD",
+        "bounds": null,
+        "requirements": null,
+        "method": "",
+        "sources": [],
+        "reason": "Template only; no measurements collected",
+        "activity_ids": []
+      }
+    }
+  }
+}

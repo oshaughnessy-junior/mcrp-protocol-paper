@@ -1,0 +1,146 @@
+{
+  "@context": [
+    "https://w3id.org/ro/crate/1.2/context",
+    {
+      "mcrp": "https://example.org/mcrp/toy-crosswalk/0.1#"
+    }
+  ],
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": {
+        "@id": "https://w3id.org/ro/crate/1.2"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "name": "Synthetic scoped-claim example",
+      "description": "A transport fixture, not verified scientific evidence.",
+      "datePublished": "2026-09-25",
+      "license": {
+        "@id": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "conformsTo": {
+        "@id": "profile.html"
+      },
+      "hasPart": [
+        {
+          "@id": "payload/input.txt"
+        },
+        {
+          "@id": "profile.html"
+        }
+      ],
+      "mcrp:releaseIdentity": "srr:synthetic-crosswalk-v1",
+      "mcrp:claims": [
+        {
+          "@id": "#claim-mean"
+        }
+      ],
+      "mcrp:decisions": [
+        {
+          "@id": "#decision-review"
+        }
+      ],
+      "mcrp:edges": [
+        {
+          "@id": "#edge-0"
+        },
+        {
+          "@id": "#edge-1"
+        }
+      ]
+    },
+    {
+      "@id": "https://creativecommons.org/licenses/by/4.0/",
+      "@type": "CreativeWork",
+      "name": "CC BY 4.0",
+      "description": "Attribution 4.0 International; synthetic fixture metadata and payload."
+    },
+    {
+      "@id": "profile.html",
+      "@type": [
+        "File",
+        "CreativeWork",
+        "Profile"
+      ],
+      "name": "Local MCRP crosswalk transport profile 0.1",
+      "description": "Bounded example profile; not an endorsed or registered standard.",
+      "version": "0.1",
+      "encodingFormat": "text/html"
+    },
+    {
+      "@id": "payload/input.txt",
+      "@type": "File",
+      "name": "Toy numbers",
+      "encodingFormat": "text/plain",
+      "contentSize": "12",
+      "mcrp:sha256": "a932ce8aee84b1b20cf8849bf3a596676b0fd98c1b56bd4dcfddc3127c73370d"
+    },
+    {
+      "@id": "#claim-mean",
+      "@type": [
+        "CreativeWork",
+        "mcrp:Claim"
+      ],
+      "name": "#claim-mean",
+      "text": "The fixture mean is 2.0",
+      "mcrp:scope": "These three synthetic values only",
+      "mcrp:requires": [
+        {
+          "@id": "payload/input.txt"
+        }
+      ]
+    },
+    {
+      "@id": "#decision-review",
+      "@type": [
+        "CreativeWork",
+        "mcrp:Decision"
+      ],
+      "name": "#decision-review",
+      "about": {
+        "@id": "#claim-mean"
+      },
+      "mcrp:actor": "declared-reviewer",
+      "mcrp:outcome": "pending",
+      "mcrp:policy": "toy-policy-v1",
+      "mcrp:validUntil": 20
+    },
+    {
+      "@id": "#edge-0",
+      "@type": [
+        "CreativeWork",
+        "mcrp:Edge"
+      ],
+      "name": "Declared requires-evidence edge",
+      "mcrp:source": {
+        "@id": "payload/input.txt"
+      },
+      "mcrp:target": {
+        "@id": "#claim-mean"
+      },
+      "mcrp:kind": "requires-evidence"
+    },
+    {
+      "@id": "#edge-1",
+      "@type": [
+        "CreativeWork",
+        "mcrp:Edge"
+      ],
+      "name": "Declared requires-evidence edge",
+      "mcrp:source": {
+        "@id": "#claim-mean"
+      },
+      "mcrp:target": {
+        "@id": "#decision-review"
+      },
+      "mcrp:kind": "requires-evidence"
+    }
+  ]
+}

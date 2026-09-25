@@ -1,0 +1,48 @@
+{
+  "release": "srr:synthetic-crosswalk-v1",
+  "title": "Synthetic scoped-claim example",
+  "description": "A transport fixture, not verified scientific evidence.",
+  "date": "2026-09-25",
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "artifacts": [
+    {
+      "id": "payload/input.txt",
+      "name": "Toy numbers",
+      "sha256": "a932ce8aee84b1b20cf8849bf3a596676b0fd98c1b56bd4dcfddc3127c73370d",
+      "media_type": "text/plain",
+      "bytes": 12
+    }
+  ],
+  "claims": [
+    {
+      "id": "#claim-mean",
+      "text": "The fixture mean is 2.0",
+      "scope": "These three synthetic values only",
+      "requires": [
+        "payload/input.txt"
+      ]
+    }
+  ],
+  "decisions": [
+    {
+      "id": "#decision-review",
+      "claim": "#claim-mean",
+      "actor": "declared-reviewer",
+      "outcome": "pending",
+      "policy": "toy-policy-v1",
+      "valid_until": 20
+    }
+  ],
+  "edges": [
+    {
+      "source": "payload/input.txt",
+      "target": "#claim-mean",
+      "kind": "requires-evidence"
+    },
+    {
+      "source": "#claim-mean",
+      "target": "#decision-review",
+      "kind": "requires-evidence"
+    }
+  ]
+}

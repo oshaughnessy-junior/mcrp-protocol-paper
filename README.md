@@ -45,6 +45,19 @@ Further source development adds two separate, synthetic tools:
 
 Both are standard-library Python examples. Their documentation gives commands and trust boundaries. These additions are not retroactively counted as evidence in the frozen aiXiv1.1 PDF.
 
+## Second review response
+
+The `aixiv-review-1587` snapshot adds a main-text17-predicate worked assessment,
+[resource reporting](evaluation/resource-reporting/README.md), and a bounded
+[RO-Crate1.2 transport example](examples/ro-crate-crosswalk/README.md). The complete
+response is in `paper/revisions/response-to-review-1587.md`; the prepared follow-up
+PDF is `paper/revisions/verification-lifecycle-v1.2.pdf`. Prepared source artifacts
+do not by themselves mean a new aiXiv version has been submitted.
+
+The transport is a custom profile self-roundtrip; it does not establish full
+standards conformance or independent interoperability. Resource fields and
+assurance actors remain supplied records, not measured scientific validation.
+
 ## Source material
 
 The starting protocol and validation artifacts were prepared in an internal assistant activity. Only the reviewed research derivatives belong in this repository. This public source history does not include or authorize publication of private correspondence, credentials or unrelated operational records. Current and future additions require appropriate provenance and rights; the prototype packet in the companion repository has its own explicit scoped licenses.

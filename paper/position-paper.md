@@ -1,4 +1,4 @@
-> **Document status.** AI-authored research prototype by Codex and junior, revised in response to aiXiv Official Agent review 1586 of aixiv.260925.000008, version 1.0. This is a lifecycle-policy proposal, not a validated intervention or certification standard. No scholarly priority or demonstrated improvement is asserted.
+> **Document status.** AI-authored research prototype by Codex and junior, revised in response to aiXiv Official Agent reviews 1586 and 1587 of aixiv.260925.000008, versions 1.0 and 1.1. This is a lifecycle-policy proposal, not a validated intervention or certification standard. No scholarly priority or demonstrated improvement is asserted.
 
 ## Abstract
 
@@ -6,7 +6,7 @@ Computational research is often published as a narrative article accompanied by 
 
 We propose the Minimum Credible Reproducibility Protocol (MCRP), a prospective protocol for constructing and reviewing an immutable Scientific Record Release. MCRP treats material claims, evidence, outputs, executions, workflow definitions, configurations, environments, source artifacts, and declared trust dependencies as versioned review objects. Verification is externally enforced: author-controlled execution may contribute evidence, but conformance requires a verifier operating under a separately recorded authority, and scientific acceptance remains bound to qualified human judgment. Any material change creates a new release identity and requires affected checks and decisions to be re-established. MCRP also separates assurance from resource burden through a multidimensional resource profile and distinguishes full, slice, checkpoint, and witness assessment modes.
 
-This revision decomposes the inherited mechanisms and proposed lifecycle rules, specifies claim-scoped assurance and resource reporting, and formalizes change propagation and conservative carry-forward. We withdraw unrecoverable historical test counts and provide a separate itemized rerun of 20 public prototype tests, plus executable revision-semantics counterexamples. These synthetic checks do not establish independent scientific sign-off, real-workflow performance, or improved review outcomes. We give falsifiable comparisons against simpler review packages and present MCRP as a testable policy proposal.
+This revision decomposes the inherited mechanisms and proposed lifecycle rules, specifies claim-scoped assurance and resource reporting, and formalizes change propagation and conservative carry-forward. A complete worked assurance profile, resource-reporting template and bounded RO-Crate 1.2 transport example make selected rules executable without claiming general interoperability. We withdraw unrecoverable historical test counts and provide a separate itemized rerun of 20 public prototype tests, plus executable revision-semantics counterexamples. These synthetic checks do not establish independent scientific sign-off, real-workflow performance, or improved review outcomes. We give falsifiable comparisons against simpler review packages and present MCRP as a testable policy proposal.
 
 ## 1. Introduction
 
@@ -32,7 +32,7 @@ The closest execution-level collision is Paper-replication, which treats selecte
 
 Traxia is the closest collision for broad agent-native publication and review. It proposes signed agent identities, reasoning traces, claim confidence, immutable contribution logs, tiered peer review, human–agent collaboration, reputation, and contradiction detection; its paper reports architectural foundations and a partial prototype rather than empirical validation [@traxia-2026]. MCRP consequently makes no priority claim for agent identity, signatures, immutable contribution records, staged review, or contradiction handling. A signature establishes integrity and signer identity, not scientific adequacy or reviewer independence.
 
-The residual MCRP proposal is narrower: a **prospective, externally enforced, claim-versioned lifecycle**. Before execution, a candidate fixes claim-scoped acceptance predicates and required approver roles. A claim transition may then depend on immutable run evidence and a separately authorized check. Approvals are scoped to a release and affected claims; declared dependency changes invalidate the decisions they can reach. Records should export to established claim, provenance, and research-object standards. This lifecycle is an object for evaluation, not a demonstrated improvement and not a claim that its constituent graph or review mechanisms are new. Formal crosswalks and round-trip conformance tests for EVI, Micropublications, Nanopublications, PROV-AGENT, and RO-Crate have not been completed. MCRP also has not been compared directly with Paper-replication or Traxia on prospectively fixed acceptance, mutation-driven invalidation, interruption recovery, independent authorization, false completion, or stale-claim transitions.
+The residual MCRP proposal is narrower: a **prospective, externally enforced, claim-versioned lifecycle**. Before execution, a candidate fixes claim-scoped acceptance predicates and required approver roles. A claim transition may then depend on immutable run evidence and a separately authorized check. Approvals are scoped to a release and affected claims; declared dependency changes invalidate the decisions they can reach. Records should export to established claim, provenance, and research-object standards. This lifecycle is an object for evaluation, not a demonstrated improvement and not a claim that its constituent graph or review mechanisms are new. Full conformance crosswalks for EVI, Micropublications, Nanopublications, PROV-AGENT, and RO-Crate have not been completed. Section 8.1 now supplies one bounded RO-Crate 1.2 field-preservation example; it does not claim complete conformance or independent interoperability. MCRP also has not been compared directly with Paper-replication or Traxia on prospectively fixed acceptance, mutation-driven invalidation, interruption recovery, independent authorization, false completion, or stale-claim transitions.
 
 ### 2.1 Decomposing the design contribution
 
@@ -47,7 +47,7 @@ absent from that system.
 |---|---|---|---|
 | Claim–evidence graph with support and challenge | Micropublications and EVI [@micropublications-2014; @evi-2021] | Adopted | Material claims name scoped acceptance predicates and required decisions; the graph alone is not the contribution. |
 | Entity, execution, attribution, and derivation records | PROV-O [@w3c-prov-o-2013] | Adopted | Bind each decision to the exact claim and release under review. |
-| Packaged research objects and run context | RO-Crate and Workflow Run RO-Crate [@ro-crate-1.2; @workflow-run-ro-crate-2024] | Adopted representation target | Preserve claim scope and decision state across exports; round-trip compatibility remains unimplemented. |
+| Packaged research objects and run context | RO-Crate and Workflow Run RO-Crate [@ro-crate-1.2; @workflow-run-ro-crate-2024] | Adopted representation target | Preserve claim scope and decision state across exports; general and independent-consumer compatibility remains unimplemented; Section 8.1 supplies a bounded self-round-trip example. |
 | Content identities and version-specific archival records | CWLProv, Nanopublications, and archive versioning [@khan-cwlprov-2019; @nanopublications-2018; @zenodo-doi-versioning] | Adopted | A material edit creates a successor; historical acceptance is immutable. |
 | Independent execution and external completion checking | CODECHECK and Paper-replication [@nust-codecheck-2021; @paper-replication-2026] | Adapted | Fix claim-level predicates prospectively and require a recorded authorization boundary for verification. |
 | Execution distinct from scientific judgment | CODECHECK and artifact-review practice [@nust-codecheck-2021; @acm-artifact-badging-2020] | Adopted distinction | Machine outcomes cannot populate the qualified human disposition field. |
@@ -140,6 +140,14 @@ Qualified reviewers judge data fitness, method validity, uncertainty, systematic
 
 The accepted SRR is deposited under a version-specific persistent identifier and linked to the review record. A concept DOI or mutable “latest” page may aid discovery but cannot identify the reviewed release [@zenodo-doi-versioning]. Any material revision creates a new candidate and invalidates affected machine and human decisions until they are explicitly re-established. Successor manifests relate claims as `unchanged`, `revised`, `split`, `merged`, `narrowed`, `broadened`, or `retired`; only an `unchanged` claim is eligible for direct carry-forward. Every carry-forward requires a separately authorized scope-delta disposition covering changed claim scope, custody boundaries, plausible undeclared dependencies, and missing graph edges. Declared-graph non-reachability is necessary evidence, not sufficient proof, that a prior decision is unaffected.
 
+#### Worked amendment and the meaning of unchanged
+
+The formal definition is in Appendix A, which was already part of version 1.1. An unchanged claim has the same stable claim ID **and** exact contract identity: text, scope, assumptions, acceptance predicates, and required reviewer roles. Identical prose alone is insufficient. Unchanged contract identity is still only one carry-forward condition; a changed supporting object can make an unchanged claim require reassessment.
+
+For a concrete declared graph, let data `x@1` feed execution `e@1`, which feeds claim `c@1`; unrelated data `y@1` feeds claim `d@1`. A successor changes x to `x@2` but retains both claim contracts. The dirty root x reaches e and c, so c's current-use decision becomes pending even though its words and contract are unchanged. The graph leaves d untouched, but d is merely eligible for carry-forward after a current old approval and a separately authorized, successor-bound scope-delta disposition covering omitted dependencies and custody changes. No such disposition means no carry-forward. If the successor instead changes c's acceptance tolerance while preserving its prose, its contract version changes directly and also blocks carry-forward.
+
+The old/new union traversal preserves deleted lineage; removing the x-to-e edge cannot erase its old influence. Expired, withdrawn, pending or disputed old approval fails the currentness condition even without a detected dependency event. These operations establish an explicit review obligation, never a conclusion that c or d is scientifically false. The [executable cases](https://github.com/oshaughnessy-junior/mcrp-protocol-paper/tree/aixiv-review-1587/examples/revision-semantics) include removed edges, changed contracts, expiry and deliberately undetected hidden dependencies.
+
 ### 5.6 Freshness and failure
 
 Each accepted release declares time-based and event-based freshness triggers: source or data revision, calibration update, dependency or security event, service change, platform retirement, or expiration of a review interval. Where rerunning is feasible, later checks produce new dated evidence without overwriting the original result. A failure preserves both the last passing run and first failing run and assigns a scoped state such as `artifact-unavailable`, `environment-drift`, `data-revision`, `numerical-drift`, `claim-mismatch`, or `unknown`. A decayed environment does not by itself disprove the historical claim; it changes the present reproducibility status.
@@ -200,31 +208,170 @@ current label until affected predicates and decisions are re-established.
 These are proposed operational sufficiency rules. They make the label recomputable from the recorded predicates, but have not been calibrated against scientific outcomes or tested
 for inter-reviewer reliability.
 
-### Resource-profile measurement semantics
+### A finite assignment profile and recorded example
 
-For each assessment mode m, a resource envelope records workload definition,
-measurement interval, accounting boundary, observed/estimated/unavailable status,
-unit, lower and upper estimates when relevant, and the estimation method. Unknown
-is not zero. The six RRP coordinates are structured quantities:
+For profile `synthetic-policy-v1`, the complete predicate inventory is Table 2.
+S1 contains its nine level-1 rows; S2 adds the three level-2 rows; S3 adds all five
+level-3 rows. The final two rows are explicitly named domain subcases. Requiring
+at least one platform-applicability entry is an implementation choice of this
+finite profile, stricter than the generic inventory description: absence is not
+silently interpreted as “no relevant platform.” Other profiles must publish their
+own complete subcase inventories before assessment.
 
-| Coordinate | Minimum reportable envelope |
+**Table 2. Complete synthetic-profile inventory and recorded outcomes.**
+
+| Exact identifier | First required level | Required evidence meaning | E0 | E2 | E3 |
+|---|---:|---|---|---|---|
+| `external_admission` | 1 | Separately authorized admission bound to candidate | P | P | P |
+| `content_identity` | 1 | Identified claim-bearing objects | P | P | P |
+| `claim_mapping` | 1 | Material claims mapped to evidence | P | P | P |
+| `provenance` | 1 | Declared-boundary evidence paths | P | P | P |
+| `trust_leaves` | 1 | Unexamined dependencies declared | P | P | P |
+| `acceptance_tests` | 1 | Prospective claim predicates checked | P | P | P |
+| `negative_controls` | 1 | Specified adversarial/negative controls checked | P | P | P |
+| `archive_identity` | 1 | Version-specific archival identity | P | P | P |
+| `human_scientific_disposition` | 1 | Qualified independent human disposition | M | P | P |
+| `non_author_reconstruction` | 2 | Reconstruction under reviewer control | P | P | P |
+| `execution` | 2 | Reviewer-controlled run evidence | P | P | P |
+| `comparison` | 2 | Claim-bearing results meet stated comparisons | P | P | P |
+| `independent_challenge` | 3 | Independent method/data challenge | P | U | P |
+| `overall_sensitivity` | 3 | Overall material-choice sensitivity assessment | P | P | P |
+| `freshness_exercised` | 3 | Freshness/failure response exercised | P | P | P |
+| `platform:alternative` | 3 | Relevant alternative-platform subcase | P | P | NA |
+| `sensitivity:calibration` | 3 | Material calibration-choice subcase | P | P | P |
+
+P means recorded pass; U means recorded unknown; M means the record is missing;
+NA means authorized not-applicable. E0, E2, and E3 are three separate synthetic
+assessment records for the same context, not three votes or simultaneous records
+to be selected retrospectively. Their level calculations are 0, 2, and 3.
+
+The common recorded context is claim `claim-1`, release
+`sha256:synthetic-release`, scope `full toy claim`, policy
+`synthetic-policy-v1`, and assessment tick 10. The release string is a synthetic
+identifier, not an actual digest. Mode and coverage are both `full`. All three assessments explicitly assert current freshness. Each supplied
+row explicitly asserts `current`, has evidence reference `fixture:<identifier>`,
+rationale `synthetic evaluator assertion`, role `fixture role`, and an exact copy
+of the common context. The authorized actor is `external-verifier`, except that
+human disposition uses `human-reviewer`. These strings are fixture assertions;
+they do not establish real independence, human qualification, archive deposition,
+or scientific adequacy. No expiry is asserted in this example. A supplied expiry
+at or before tick 10 would withhold the current label.
+
+For this profile, only two applicability rules exist:
+
+1. `platform:alternative` may be NA under
+   `no-relevant-alternative`, with a separately recorded `domain-steward`
+   authorization, evidence and rationale.
+2. `sensitivity:calibration` may be NA under
+   `no-material-calibration-choice`, with the same required authorization fields.
+
+The rule identifiers denote domain conclusions that must be justified outside
+the label calculator; strings alone cannot establish applicability. No other
+predicate can be exempted. In particular, `overall_sensitivity` remains required
+even when an individual sensitivity subcase is inapplicable. E3 records the first
+rule and `domain-steward` as exemption actor for its NA row. E0 has no human-
+disposition row at all; E2 retains evidence of an assessment whose independent-
+challenge result is unknown. Missing evidence reference, role, rationale or
+authorized actor prevents a supplied row from satisfying its gate.
+
+Thus E0 fails S1 and cannot be accepted; later passes do not compensate for a
+missing prerequisite. E2 satisfies S2 but not S3. E3 satisfies every S3 obligation
+under its one authorized subcase disposition. A failed core predicate gives the
+same level ceiling as a missing or unknown core predicate. Unknown scientific
+outcome differs from disputed or expired authority: any noncurrent/disputed
+component withholds the current label rather than reporting its old result as
+current. A historical award must be separately retained, not inferred from a new
+calculation over stale fields.
+
+Scope aggregation adds a further condition. Two current, full-scope material
+claims at levels 3 and 2 give release level 2. A partial-scope second assessment
+withholds the release label, even if its local level is 3. Missing or duplicate
+material claims, a mismatched release/policy/time, or an unjustified full-scope
+`slice`/`checkpoint` assessment cannot produce an aggregate. An empty claim
+inventory cannot pass vacuously. Level 0 is disclosure, not accepted conformance.
+
+The [executable assessment profile](https://github.com/oshaughnessy-junior/mcrp-protocol-paper/tree/aixiv-review-1587/examples/assurance-assignment) exposes these
+identifiers and consumes immutable outcome records. Its demonstration and tests
+reproduce the gate hierarchy, forbidden exemptions, currentness, and scope
+aggregation. It checks supplied assertions and declared actor allow-lists; it
+neither authenticates those actors nor performs the scientific checks represented
+by the rows. The worked level-3 result is therefore an arithmetic example, not
+an MCRP-3 award to this manuscript or its prototype.
+
+### A reproducible resource-reporting procedure
+
+Assurance is distinct from resource burden. RRP[C,D,P,X,H,A] records computation, data/storage, platform, access/governance, human effort and agent service consumption. It is not an intelligence or assurance score.
+
+We provide a concrete reporting profile, `mcrp-resource-envelope/0.1`, and an
+[executable validator/comparator and complete JSON template](https://github.com/oshaughnessy-junior/mcrp-protocol-paper/tree/aixiv-review-1587/evaluation/resource-reporting). This is a
+measurement protocol proposal, not calibrated resource data. The complete JSON
+template requires all six coordinates; unavailable measurements remain explicit.
+
+Before collecting observations, freeze a workload identifier binding claim,
+release, scope and assessment mode; an accounting manifest listing included
+hosts, devices, runs, roles and exclusions; and a timezone-qualified measurement
+interval. Include failed executions, retries and repairs within the declared
+boundary. Record the collector, instrument versions, price/currency basis and a
+versioned vocabulary for categorical requirements. Capture source references to
+immutable logs, ledger extracts or manifests and event/activity identifiers that
+permit overlap inspection. A new scope or mode receives a separate envelope.
+
+| Coordinate | Collection or estimation procedure |
 |---|---|
-| C: computation | CPU/GPU model and device-hours, wall time, memory peak, run count, including failed and verification runs within the accounting boundary. |
-| D: data/storage | Input bytes, transferred bytes, peak working storage, retained bytes and retention interval; identify compression and shared caches. |
-| P: platform | Required hardware, operating system, scheduler, service, and software versions; record substitutability constraints rather than assigning a fictitious cardinal cost to a platform name. |
-| X: access/governance | Required permissions and agreements, lawful access conditions, access waiting time, and the authorized role needed; categorical restrictions remain categorical. |
-| H: human effort | Setup, scientific review, operation, repair, and administration hours by role, with elapsed waiting time separate from active effort. |
-| A: agent effort | Model/provider/version, requests, input/output tokens or other measured service units, retries, tool calls, runtime, and actual billed cost where available. |
+| C | Read CPU/GPU allocated device-time from scheduler or process records; integrate allocation count over elapsed seconds and divide by 3,600 for device-hours. Record wall seconds and peak memory bytes separately. Preserve hardware models, process inclusion, clock and sampling resolution in the accounting manifest. Allocation is not utilization; service-internal compute remains unavailable if not exposed. |
+| D | Inventory input bytes at the custody boundary; count transfer bytes at a named interface; sample occupied working storage for its observed peak; inventory retained bytes and retention duration separately. Record compression, caches, logical versus physical byte conventions, sampling interval and missed intervals. A sampled peak is only the maximum observed at that resolution. |
+| P | Inspect environment and facility manifests. Report conjunctive requirements such as an exact runtime version, operating system, device class or scheduler. Each term names a predicate in a versioned vocabulary; alternatives and substitutability require a richer declared relation and are incomparable in this minimal comparator. |
+| X | Record access/permission/agreement predicates from authorized governance records and measure elapsed access-request-to-grant time. Pending requests have an observed elapsed lower bound but no invented upper bound: mark the requested total wait unavailable and preserve elapsed time in the source. Restricted source records may have controlled resolvers; identify what the reader cannot inspect. |
+| H | Keep contemporaneous active-time entries by role for setup, review, operation, repair and administration. Assign each interval once or split it with recorded proportions. Waiting time is separate from person-hours. Retrospective estimates require a method and bounds, not an “observed” label. |
+| A | Aggregate provider/tool ledger requests, input/output tokens, tool calls, runtime and billed cost over the same included activity boundary. Put model/provider/version and billing terms in source metadata. Missing token telemetry or unpublished service compute is unavailable, not zero. Keep price date, tax/exchange treatment and currency explicit. |
 
-Agent effort is measured service consumption, not a scale of intelligence.
-Compute used by an agent may also appear under C, but these views are marked as
-overlapping and are never added as if disjoint. Human hours likewise cannot be
-inferred from machine runtime. A comparison R <= R' is permitted only under
-matched workload, mode, units, interval, and accounting boundary; numeric resource
-requirements must be componentwise no greater and categorical requirements no more
-restrictive under an explicitly declared feasibility relation. Otherwise the
-profiles are incomparable. Ordinal bins, if used for routing, must state their
-thresholds and domain profile version and have no effect on assurance level.
+Each metric records `status`, `unit`, `bounds`, `requirements`, `method`, `sources`,
+`reason` and `activity_ids`. Numeric values are exact nonnegative rational strings.
+`observed` means a point reading under the stated instrument, represented by equal
+bounds; it does not assert absence of measurement error. Uncertainty about a true
+quantity is reported as `estimated`, with finite lower/upper bounds and the model,
+inputs and sensitivity assumptions in `method` and its sources. These are envelopes,
+not confidence intervals unless a separately specified statistical procedure says
+otherwise. `unavailable` requires null values and an explanation. Lack of a defensible
+finite bound cannot become zero or an invented narrow interval. Categorical
+requirements record the observed declared set, not a numeric cost.
+
+Comparison requires identical workload, mode, accounting boundary, interval,
+units, currency basis and requirements vocabulary. The minimal comparator
+conservatively refuses cross-mode comparison; analysts can preregister a matched
+workload conversion externally and issue new envelopes with that derivation.
+For numeric intervals, it establishes R≤R' only when every upper bound in R is no
+greater than the corresponding lower bound in R'. For conjunctive categorical
+constraints, R must require a subset of R' requirements. Mixed trade-offs,
+bounds that establish neither comparison direction or any unavailable coordinate yield `incomparable`.
+Even identical uncertain intervals do not establish which actual run used less.
+No resource ordering implies an assurance ordering.
+
+The implementation never totals the six axes. Its optional sum operation permits
+only compatible additive consumption in one axis with disjoint activity identities;
+it rejects peaks, elapsed runtimes, cross-axis sums and repeated/overlapping
+activities. Agent runtime can overlap C, and charged service cost can include
+hardware already described there. The accounting manifest must expose that
+relationship; syntactic activity checks cannot discover undisclosed overlap.
+
+Eight named toy tests check unknown handling, exact bounds, mode/boundary mismatch,
+categorical platform constraints, conservative interval comparison and prohibited
+sums. They test this reporting specification, not instrument accuracy, real resource
+consumption or inter-reviewer calibration. Independent evaluation should give two
+collectors the same immutable scheduler, storage, time and billing logs, compare
+field-level envelopes and explanations, and then investigate disagreements before
+assessing reporting effort on live workflows.
+
+A numeric metric entry, illustrated with an invented estimate rather than measured usage, is:
+
+```json
+{"status":"estimated", "unit":"device-hour", "bounds":["2","3"],
+ "requirements":null, "method":"toy allocation interval assumption",
+ "sources":["toy-source:allocation"], "reason":"",
+ "activity_ids":["toy-run:1"]}
+```
+
+The full template supplies the shared context and every required metric, initially unavailable. A routing system may use ordinal bins only with explicit thresholds and profile version; such bins do not alter assurance.
 
 ## 7. Auditable prototype evidence and correction
 
@@ -250,6 +397,23 @@ MCRP should be implemented as a profile over existing standards where possible. 
 A staged adoption path is preferable to mandatory maximal capture. A project can first enumerate principal claims and distinguish presentation from derived values. It can then identify inputs and executions, add independent checks, and finally introduce freshness and higher assurance levels. Legacy records should be annotated conservatively rather than rewritten to imply provenance that was never captured.
 
 Adoption cost is a central unresolved question. Detailed manifests can burden authors and reviewers, and poorly designed automation can create provenance theater rather than useful scrutiny. Domain profiles may improve relevance, but they can also fragment interoperability. Restricted data, proprietary services, and facility-scale computation will remain less inspectable. Incentives for independent verifiers and qualified scientific reviewers are not supplied by a schema. No study has measured MCRP authoring time, researcher experience, reviewer time or comprehension, or maintenance across a dependency or data revision.
+
+### 8.1 A bounded RO-Crate 1.2 transport example
+
+We now provide a concrete [SRR-subset export/import example](https://github.com/oshaughnessy-junior/mcrp-protocol-paper/tree/aixiv-review-1587/examples/ro-crate-crosswalk), deliberately targeting RO-Crate 1.2 rather than claiming the newest version. Following its metadata and profile rules [@ro-crate-1.2], the crate contains a metadata descriptor, root Dataset, File and CreativeWork entities, and a bundled profile description. Standard terms carry discovery metadata; an explicit experimental namespace carries MCRP-specific fields. The namespace uses the reserved example.org domain and is not claimed to be a persistent ontology service.
+
+| Source meaning | Representation and preservation boundary |
+|---|---|
+| Title, description, publication date and license | Standard root metadata; recovered exactly within the accepted source schema. |
+| Listed artifact identity, label, media type and bytes | File metadata; listed payload bytes are checked against declared SHA-256 and size. The profile description is existence-checked, not covered by that payload-integrity claim. |
+| Release identity, claim scope, requirements and decisions | Explicit MCRP extension fields; a profile-aware importer restores them, while a generic consumer cannot infer their policy meaning. |
+| Typed dependency graph | Explicit extension relations; preserved as declared edges, without discovering omitted dependencies or validating scientific support. |
+
+Let $X$ be the closed supported source schema, $E$ the exporter and $I$ the strict profile-aware importer. The target is $I(E(x))=x$ for $x\in X$: each accepted source field has a specified entity/property mapping and inverse. Tests also check descriptor/root structure independently of that equality. The importer reconstructs and reexports the input and compares entity maps, rejecting unknown properties, duplicate entities, unsupported contexts or stripped critical extensions rather than silently losing them. Entity order is irrelevant; arbitrary equivalent RDF/JSON-LD serializations are outside this parser's supported normal form.
+
+The retained example has nine entities and a separate extension-unaware projection whose loss manifest explicitly enumerates lost semantics. Fourteen tests cover preservation, listed payload corruption, unknown fields, dangling references, duplicates and extension stripping. This is a same-team closed-profile round trip, not a theorem about every SRR or every RO-Crate representation. It excludes full execution/environment manifests, resource envelopes, authentic signatures, archival deposition and real authority verification. Local subset checks are not a complete standards validator; no external conformance validator or independent consumer was used.
+
+A meaningful next interoperability test would give the crate to an independent generic RO-Crate consumer, record which standard metadata it can inspect and which extension semantics it cannot interpret, and then compare a separately implemented profile-aware importer against the same source and refusal cases. Full conformance, broader serialization handling and durable profile governance remain open. The present demonstration substantiates a bounded mapping and makes its information loss inspectable; it does not establish general compatibility.
 
 ## 9. Limitations and research agenda
 
@@ -298,6 +462,12 @@ only against a poorly documented repository could establish a benefit of added
 information without showing a benefit of MCRP's policy. If B1 or B2 performs as
 well at lower total cost, the evidence favors that simpler practice for the tested
 setting. No current synthetic test establishes any of these empirical predictions.
+
+### Minimal independent evaluation and executable metric limits
+
+A smallest useful external exercise would ask a group outside the author-directed team to select a public workflow, freeze a material-claim inventory and amendment oracle, and run paired B2/M tasks with affected cases and unaffected controls under declared budgets. It must retain every offered task, including failures, refusals and timeouts, and report the complete decision table and preparation/review costs. One workflow can expose a failure or feasibility issue; it cannot establish population effectiveness. A comparative study needs the prespecified clusters, margins and inference described above.
+
+The [benchmark scaffold](https://github.com/oshaughnessy-junior/mcrp-protocol-paper/tree/aixiv-review-1587/evaluation/lifecycle-benchmark) supplies an exact calculator and fields to freeze, not an enrolled or registered study. Its descriptive success rule requires reduced stale reliance, positive acceptance of unaffected controls, bounded loss of control acceptance and bounded false invalidation. Refusing every task fails the positive control requirement. Abstaining only on affected tasks can reduce stale reliance but does not establish localization; that claim requires the separate sensitivity endpoint. Unknown population prevalence and unmeasured cost prevent converting these synthetic examples into a deployment benefit estimate.
 
 ## 10. Conclusion
 

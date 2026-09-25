@@ -1,0 +1,9 @@
+{
+  "self_roundtrip_equal": true,
+  "payload_hashes_match": true,
+  "entity_count": 9,
+  "unaware_consumer_loss_paths": 22,
+  "external_validator": "not run",
+  "independent_consumer": "not tested",
+  "standard_target": "https://w3id.org/ro/crate/1.2"
+}
