@@ -1,0 +1,189 @@
+{
+  "synthetic_asserted_inputs_only": true,
+  "cases": {
+    "all_asserted_pass": {
+      "claim_result": {
+        "context": {
+          "claim": "claim-1",
+          "release": "sha256:synthetic-release",
+          "scope": "full toy claim",
+          "policy": "synthetic-policy-v1",
+          "at": 10
+        },
+        "current_level": 3,
+        "predicate_level": 3,
+        "mode": "full",
+        "coverage": "full",
+        "reasons": []
+      },
+      "release_result": {
+        "current_level": 3,
+        "accepted": true,
+        "reasons": []
+      }
+    },
+    "no_scientific_disposition": {
+      "claim_result": {
+        "context": {
+          "claim": "claim-1",
+          "release": "sha256:synthetic-release",
+          "scope": "full toy claim",
+          "policy": "synthetic-policy-v1",
+          "at": 10
+        },
+        "current_level": 0,
+        "predicate_level": 0,
+        "mode": "full",
+        "coverage": "full",
+        "reasons": [
+          "human_scientific_disposition:missing"
+        ]
+      },
+      "release_result": {
+        "current_level": 0,
+        "accepted": false,
+        "reasons": []
+      }
+    },
+    "author_self_admission": {
+      "claim_result": {
+        "context": {
+          "claim": "claim-1",
+          "release": "sha256:synthetic-release",
+          "scope": "full toy claim",
+          "policy": "synthetic-policy-v1",
+          "at": 10
+        },
+        "current_level": 0,
+        "predicate_level": 0,
+        "mode": "full",
+        "coverage": "full",
+        "reasons": [
+          "external_admission:missing-evidence-or-authority"
+        ]
+      },
+      "release_result": {
+        "current_level": 0,
+        "accepted": false,
+        "reasons": []
+      }
+    },
+    "expired_comparison": {
+      "claim_result": {
+        "context": {
+          "claim": "claim-1",
+          "release": "sha256:synthetic-release",
+          "scope": "full toy claim",
+          "policy": "synthetic-policy-v1",
+          "at": 10
+        },
+        "current_level": null,
+        "predicate_level": 1,
+        "mode": "full",
+        "coverage": "full",
+        "reasons": [
+          "comparison:not-current"
+        ]
+      },
+      "release_result": {
+        "current_level": null,
+        "accepted": false,
+        "reasons": [
+          "claim-1:withheld"
+        ]
+      }
+    },
+    "narrow_slice": {
+      "claim_result": {
+        "context": {
+          "claim": "claim-1",
+          "release": "sha256:synthetic-release",
+          "scope": "full toy claim",
+          "policy": "synthetic-policy-v1",
+          "at": 10
+        },
+        "current_level": 3,
+        "predicate_level": 3,
+        "mode": "slice",
+        "coverage": "partial",
+        "reasons": []
+      },
+      "release_result": {
+        "current_level": null,
+        "accepted": false,
+        "reasons": [
+          "claim-1:partial-scope"
+        ]
+      }
+    },
+    "unjustified_full_slice": {
+      "claim_result": {
+        "context": {
+          "claim": "claim-1",
+          "release": "sha256:synthetic-release",
+          "scope": "full toy claim",
+          "policy": "synthetic-policy-v1",
+          "at": 10
+        },
+        "current_level": null,
+        "predicate_level": 3,
+        "mode": "slice",
+        "coverage": "full",
+        "reasons": [
+          "full-scope:missing-validated-coverage-argument"
+        ]
+      },
+      "release_result": {
+        "current_level": null,
+        "accepted": false,
+        "reasons": [
+          "claim-1:withheld"
+        ]
+      }
+    },
+    "authorized_platform_nonapplicability": {
+      "claim_result": {
+        "context": {
+          "claim": "claim-1",
+          "release": "sha256:synthetic-release",
+          "scope": "full toy claim",
+          "policy": "synthetic-policy-v1",
+          "at": 10
+        },
+        "current_level": 3,
+        "predicate_level": 3,
+        "mode": "full",
+        "coverage": "full",
+        "reasons": []
+      },
+      "release_result": {
+        "current_level": 3,
+        "accepted": true,
+        "reasons": []
+      }
+    },
+    "unlawful_core_exemption": {
+      "claim_result": {
+        "context": {
+          "claim": "claim-1",
+          "release": "sha256:synthetic-release",
+          "scope": "full toy claim",
+          "policy": "synthetic-policy-v1",
+          "at": 10
+        },
+        "current_level": 0,
+        "predicate_level": 0,
+        "mode": "full",
+        "coverage": "full",
+        "reasons": [
+          "negative_controls:not-applicable"
+        ]
+      },
+      "release_result": {
+        "current_level": 0,
+        "accepted": false,
+        "reasons": []
+      }
+    }
+  }
+}

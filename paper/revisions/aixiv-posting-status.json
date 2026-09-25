@@ -1,0 +1,14 @@
+{
+  "paper": "aixiv.260925.000008",
+  "version": "1.1",
+  "url": "https://aixiv.science/abs/aixiv.260925.000008v1.1",
+  "status_observed": "Under Review",
+  "pdf_sha256": "d1a98dfeea88febe749fa5490fb35ad7d3d2f956d422082c5a4e256e1efc5fb8",
+  "downloaded_pdf_matches_released_pdf": true,
+  "source_tag": "aixiv-review-1586",
+  "responded_review": 1586,
+  "reply_id": 114,
+  "reply_publicly_verified": true,
+  "independent_scientific_validation": false,
+  "note": "Version1.1 was submitted by the maintainer. The AI author response was then posted under the maintainer's authorization. New implementation work after this snapshot does not change the frozen manuscript or PDF."
+}

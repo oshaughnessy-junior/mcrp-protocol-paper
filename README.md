@@ -34,6 +34,17 @@ is the initial implementation and reproducible-contribution surface.
 
 The revised manuscript is `paper/position-paper.md`. The point-by-point response, evidence inventory, mathematical specification, and internal red-team reports are in `paper/revisions/`. The new runnable model is `examples/revision-semantics/`; run its unittest suite from the repository root. These proposed semantics are not a claim that every earlier protocol draft or implementation already conforms.
 
+## Executable work following the revision
+
+The aiXiv [version1.1](https://aixiv.science/abs/aixiv.260925.000008v1.1) PDF was downloaded and verified against the released bytes. The author response is posted beneath the original version's review1586. The `aixiv-review-1586` tag preserves that submission snapshot.
+
+Further source development adds two separate, synthetic tools:
+
+- [Assurance assignment](examples/assurance-assignment/README.md) computes the proposed Section6 gates from supplied evidence assertions, preserving missing, expired, partial-scope and nonconforming states. It is not an authenticated review service.
+- [Lifecycle benchmark](evaluation/lifecycle-benchmark/DESIGN.md) supplies exact offered-denominator metrics and a preregistration scaffold. Blanket refusal cannot win its descriptive gate; no real trial or statistical inference is claimed.
+
+Both are standard-library Python examples. Their documentation gives commands and trust boundaries. These additions are not retroactively counted as evidence in the frozen aiXiv1.1 PDF.
+
 ## Source material
 
 The starting protocol and validation artifacts were prepared in an internal assistant activity. Only the reviewed research derivatives belong in this repository. This public source history does not include or authorize publication of private correspondence, credentials or unrelated operational records. Current and future additions require appropriate provenance and rights; the prototype packet in the companion repository has its own explicit scoped licenses.

@@ -1,0 +1,463 @@
+{
+  "status": "invented metric counterexamples; not empirical results",
+  "offered": [
+    {
+      "id": "a0",
+      "truth": "affected",
+      "cluster": "toy-workflow-0"
+    },
+    {
+      "id": "a1",
+      "truth": "affected",
+      "cluster": "toy-workflow-1"
+    },
+    {
+      "id": "u0",
+      "truth": "unaffected",
+      "cluster": "toy-workflow-0"
+    },
+    {
+      "id": "u1",
+      "truth": "unaffected",
+      "cluster": "toy-workflow-1"
+    }
+  ],
+  "policy": {
+    "minimum_stale_reduction": "1/2",
+    "minimum_control_acceptance": "1/2",
+    "maximum_false_invalidation": "1/4",
+    "maximum_control_loss": 0
+  },
+  "comparisons": {
+    "refuse": {
+      "assessable": true,
+      "descriptive_success": false,
+      "gates": {
+        "stale_reduction": true,
+        "absolute_control_acceptance": false,
+        "control_noninferiority": false,
+        "false_invalidation_bound": true
+      },
+      "baseline": {
+        "counts": {
+          "offered": 4,
+          "affected": 2,
+          "unaffected": 2,
+          "clusters": 2,
+          "recorded": 4,
+          "missing": 0
+        },
+        "cells": {
+          "affected": {
+            "abstain": 0,
+            "accept": 2,
+            "invalidate": 0,
+            "missing": 0,
+            "refuse": 0,
+            "timeout": 0
+          },
+          "unaffected": {
+            "abstain": 0,
+            "accept": 2,
+            "invalidate": 0,
+            "missing": 0,
+            "refuse": 0,
+            "timeout": 0
+          }
+        },
+        "rates": {
+          "stale_acceptance": "1",
+          "affected_invalidation_sensitivity": "0",
+          "false_invalidation": "0",
+          "control_acceptance": "1",
+          "affected_unresolved": "0",
+          "unaffected_unresolved": "0",
+          "all_unresolved": "0",
+          "decision_coverage": "1"
+        }
+      },
+      "candidate": {
+        "counts": {
+          "offered": 4,
+          "affected": 2,
+          "unaffected": 2,
+          "clusters": 2,
+          "recorded": 4,
+          "missing": 0
+        },
+        "cells": {
+          "affected": {
+            "abstain": 0,
+            "accept": 0,
+            "invalidate": 0,
+            "missing": 0,
+            "refuse": 2,
+            "timeout": 0
+          },
+          "unaffected": {
+            "abstain": 0,
+            "accept": 0,
+            "invalidate": 0,
+            "missing": 0,
+            "refuse": 2,
+            "timeout": 0
+          }
+        },
+        "rates": {
+          "stale_acceptance": "0",
+          "affected_invalidation_sensitivity": "0",
+          "false_invalidation": "0",
+          "control_acceptance": "0",
+          "affected_unresolved": "1",
+          "unaffected_unresolved": "1",
+          "all_unresolved": "1",
+          "decision_coverage": "0"
+        }
+      }
+    },
+    "abstain": {
+      "assessable": true,
+      "descriptive_success": false,
+      "gates": {
+        "stale_reduction": true,
+        "absolute_control_acceptance": false,
+        "control_noninferiority": false,
+        "false_invalidation_bound": true
+      },
+      "baseline": {
+        "counts": {
+          "offered": 4,
+          "affected": 2,
+          "unaffected": 2,
+          "clusters": 2,
+          "recorded": 4,
+          "missing": 0
+        },
+        "cells": {
+          "affected": {
+            "abstain": 0,
+            "accept": 2,
+            "invalidate": 0,
+            "missing": 0,
+            "refuse": 0,
+            "timeout": 0
+          },
+          "unaffected": {
+            "abstain": 0,
+            "accept": 2,
+            "invalidate": 0,
+            "missing": 0,
+            "refuse": 0,
+            "timeout": 0
+          }
+        },
+        "rates": {
+          "stale_acceptance": "1",
+          "affected_invalidation_sensitivity": "0",
+          "false_invalidation": "0",
+          "control_acceptance": "1",
+          "affected_unresolved": "0",
+          "unaffected_unresolved": "0",
+          "all_unresolved": "0",
+          "decision_coverage": "1"
+        }
+      },
+      "candidate": {
+        "counts": {
+          "offered": 4,
+          "affected": 2,
+          "unaffected": 2,
+          "clusters": 2,
+          "recorded": 4,
+          "missing": 0
+        },
+        "cells": {
+          "affected": {
+            "abstain": 2,
+            "accept": 0,
+            "invalidate": 0,
+            "missing": 0,
+            "refuse": 0,
+            "timeout": 0
+          },
+          "unaffected": {
+            "abstain": 2,
+            "accept": 0,
+            "invalidate": 0,
+            "missing": 0,
+            "refuse": 0,
+            "timeout": 0
+          }
+        },
+        "rates": {
+          "stale_acceptance": "0",
+          "affected_invalidation_sensitivity": "0",
+          "false_invalidation": "0",
+          "control_acceptance": "0",
+          "affected_unresolved": "1",
+          "unaffected_unresolved": "1",
+          "all_unresolved": "1",
+          "decision_coverage": "0"
+        }
+      }
+    },
+    "invalidate": {
+      "assessable": true,
+      "descriptive_success": false,
+      "gates": {
+        "stale_reduction": true,
+        "absolute_control_acceptance": false,
+        "control_noninferiority": false,
+        "false_invalidation_bound": false
+      },
+      "baseline": {
+        "counts": {
+          "offered": 4,
+          "affected": 2,
+          "unaffected": 2,
+          "clusters": 2,
+          "recorded": 4,
+          "missing": 0
+        },
+        "cells": {
+          "affected": {
+            "abstain": 0,
+            "accept": 2,
+            "invalidate": 0,
+            "missing": 0,
+            "refuse": 0,
+            "timeout": 0
+          },
+          "unaffected": {
+            "abstain": 0,
+            "accept": 2,
+            "invalidate": 0,
+            "missing": 0,
+            "refuse": 0,
+            "timeout": 0
+          }
+        },
+        "rates": {
+          "stale_acceptance": "1",
+          "affected_invalidation_sensitivity": "0",
+          "false_invalidation": "0",
+          "control_acceptance": "1",
+          "affected_unresolved": "0",
+          "unaffected_unresolved": "0",
+          "all_unresolved": "0",
+          "decision_coverage": "1"
+        }
+      },
+      "candidate": {
+        "counts": {
+          "offered": 4,
+          "affected": 2,
+          "unaffected": 2,
+          "clusters": 2,
+          "recorded": 4,
+          "missing": 0
+        },
+        "cells": {
+          "affected": {
+            "abstain": 0,
+            "accept": 0,
+            "invalidate": 2,
+            "missing": 0,
+            "refuse": 0,
+            "timeout": 0
+          },
+          "unaffected": {
+            "abstain": 0,
+            "accept": 0,
+            "invalidate": 2,
+            "missing": 0,
+            "refuse": 0,
+            "timeout": 0
+          }
+        },
+        "rates": {
+          "stale_acceptance": "0",
+          "affected_invalidation_sensitivity": "1",
+          "false_invalidation": "1",
+          "control_acceptance": "0",
+          "affected_unresolved": "0",
+          "unaffected_unresolved": "0",
+          "all_unresolved": "0",
+          "decision_coverage": "1"
+        }
+      }
+    },
+    "missing_everything": {
+      "assessable": true,
+      "descriptive_success": false,
+      "gates": {
+        "stale_reduction": true,
+        "absolute_control_acceptance": false,
+        "control_noninferiority": false,
+        "false_invalidation_bound": true
+      },
+      "baseline": {
+        "counts": {
+          "offered": 4,
+          "affected": 2,
+          "unaffected": 2,
+          "clusters": 2,
+          "recorded": 4,
+          "missing": 0
+        },
+        "cells": {
+          "affected": {
+            "abstain": 0,
+            "accept": 2,
+            "invalidate": 0,
+            "missing": 0,
+            "refuse": 0,
+            "timeout": 0
+          },
+          "unaffected": {
+            "abstain": 0,
+            "accept": 2,
+            "invalidate": 0,
+            "missing": 0,
+            "refuse": 0,
+            "timeout": 0
+          }
+        },
+        "rates": {
+          "stale_acceptance": "1",
+          "affected_invalidation_sensitivity": "0",
+          "false_invalidation": "0",
+          "control_acceptance": "1",
+          "affected_unresolved": "0",
+          "unaffected_unresolved": "0",
+          "all_unresolved": "0",
+          "decision_coverage": "1"
+        }
+      },
+      "candidate": {
+        "counts": {
+          "offered": 4,
+          "affected": 2,
+          "unaffected": 2,
+          "clusters": 2,
+          "recorded": 0,
+          "missing": 4
+        },
+        "cells": {
+          "affected": {
+            "abstain": 0,
+            "accept": 0,
+            "invalidate": 0,
+            "missing": 2,
+            "refuse": 0,
+            "timeout": 0
+          },
+          "unaffected": {
+            "abstain": 0,
+            "accept": 0,
+            "invalidate": 0,
+            "missing": 2,
+            "refuse": 0,
+            "timeout": 0
+          }
+        },
+        "rates": {
+          "stale_acceptance": "0",
+          "affected_invalidation_sensitivity": "0",
+          "false_invalidation": "0",
+          "control_acceptance": "0",
+          "affected_unresolved": "1",
+          "unaffected_unresolved": "1",
+          "all_unresolved": "1",
+          "decision_coverage": "0"
+        }
+      }
+    },
+    "oracle_toy": {
+      "assessable": true,
+      "descriptive_success": true,
+      "gates": {
+        "stale_reduction": true,
+        "absolute_control_acceptance": true,
+        "control_noninferiority": true,
+        "false_invalidation_bound": true
+      },
+      "baseline": {
+        "counts": {
+          "offered": 4,
+          "affected": 2,
+          "unaffected": 2,
+          "clusters": 2,
+          "recorded": 4,
+          "missing": 0
+        },
+        "cells": {
+          "affected": {
+            "abstain": 0,
+            "accept": 2,
+            "invalidate": 0,
+            "missing": 0,
+            "refuse": 0,
+            "timeout": 0
+          },
+          "unaffected": {
+            "abstain": 0,
+            "accept": 2,
+            "invalidate": 0,
+            "missing": 0,
+            "refuse": 0,
+            "timeout": 0
+          }
+        },
+        "rates": {
+          "stale_acceptance": "1",
+          "affected_invalidation_sensitivity": "0",
+          "false_invalidation": "0",
+          "control_acceptance": "1",
+          "affected_unresolved": "0",
+          "unaffected_unresolved": "0",
+          "all_unresolved": "0",
+          "decision_coverage": "1"
+        }
+      },
+      "candidate": {
+        "counts": {
+          "offered": 4,
+          "affected": 2,
+          "unaffected": 2,
+          "clusters": 2,
+          "recorded": 4,
+          "missing": 0
+        },
+        "cells": {
+          "affected": {
+            "abstain": 0,
+            "accept": 0,
+            "invalidate": 2,
+            "missing": 0,
+            "refuse": 0,
+            "timeout": 0
+          },
+          "unaffected": {
+            "abstain": 0,
+            "accept": 2,
+            "invalidate": 0,
+            "missing": 0,
+            "refuse": 0,
+            "timeout": 0
+          }
+        },
+        "rates": {
+          "stale_acceptance": "0",
+          "affected_invalidation_sensitivity": "1",
+          "false_invalidation": "0",
+          "control_acceptance": "1",
+          "affected_unresolved": "0",
+          "unaffected_unresolved": "0",
+          "all_unresolved": "0",
+          "decision_coverage": "1"
+        }
+      }
+    }
+  }
+}
