@@ -1,0 +1,78 @@
+{
+  "schema": "openclaw.scientific-writing.audit.v1",
+  "artifact_id": "audit:science-writer:mcrp-claim-readiness-2026-09-01",
+  "manuscript": "paper/position-paper.md",
+  "section": "whole manuscript",
+  "claims": [
+    {
+      "id": "logic-01",
+      "text": "Verification is externally enforced: author-controlled execution may contribute evidence, but conformance requires a verifier operating under a separately recorded authority.",
+      "rhetorical_role": "state the central proposed protocol constraint",
+      "logic_type": "paper-description",
+      "consequence_level": "high",
+      "ledger_claim_id": "mcrp-cr-03",
+      "support_status": "blocked",
+      "evidence": "prospective-lifecycle-v0.2-draft.md defines the requirement but lists independent exercise and formal schemas as unresolved",
+      "citation": null,
+      "caveat": "The current repository does not demonstrate external enforcement.",
+      "unresolved_question": "What exact external controller, authority boundary, and exercised transition record instantiate this requirement?",
+      "action": "narrow"
+    },
+    {
+      "id": "logic-02",
+      "text": "The current implementation has passed schema, replay, and adversarial fixture checks.",
+      "rhetorical_role": "summarize current implementation evidence",
+      "logic_type": "observation",
+      "consequence_level": "high",
+      "ledger_claim_id": "mcrp-cr-04",
+      "support_status": "blocked",
+      "evidence": "Only author-reported aggregate counts appear in the manuscript; no itemized repository evidence map exists.",
+      "citation": null,
+      "caveat": "The body discloses the author-reported status but the abstract does not.",
+      "unresolved_question": "Where are the exact implementation revision, fixtures, commands, logs, and digests?",
+      "action": "narrow"
+    },
+    {
+      "id": "logic-03",
+      "text": "The residual MCRP proposal is narrower: a prospective, externally enforced, claim-versioned lifecycle.",
+      "rhetorical_role": "define the residual contribution after prior-art subtraction",
+      "logic_type": "inference",
+      "consequence_level": "high",
+      "ledger_claim_id": "mcrp-cr-02",
+      "support_status": "blocked",
+      "evidence": "The closest-work matrix identifies this as a conditional residual gap, not established novelty.",
+      "citation": "research/closest-work-matrix.md",
+      "caveat": "A residual gap becomes a contribution only if the semantic delta is implemented and shown useful.",
+      "unresolved_question": "Can the residual semantics be expressed by EVI/PROV plus policy, and do they improve any measured outcome?",
+      "action": "narrow"
+    },
+    {
+      "id": "logic-04",
+      "text": "MCRP should be implemented as a profile over existing standards where possible.",
+      "rhetorical_role": "recommend an interoperability posture",
+      "logic_type": "implication",
+      "consequence_level": "medium",
+      "ledger_claim_id": "mcrp-cr-06",
+      "support_status": "verified",
+      "evidence": "The novelty matrix shows that reinvention would overlap established standards and identifies profiles and round-trip tests as required evidence.",
+      "citation": "PROV-O, RO-Crate, Workflow Run RO-Crate, Zenodo versioning",
+      "caveat": "The recommendation does not establish current interoperability.",
+      "unresolved_question": "Which normative mappings and loss boundaries will the first profile implement?",
+      "action": "keep"
+    },
+    {
+      "id": "logic-05",
+      "text": "Only empirical work could establish whether MCRP is usable or improves review outcomes.",
+      "rhetorical_role": "bound the conclusion and define the promotion gate",
+      "logic_type": "implication",
+      "consequence_level": "high",
+      "ledger_claim_id": "mcrp-cr-08",
+      "support_status": "verified",
+      "evidence": "The novelty ledger and evaluation agenda explicitly leave comparative benefit unanswered.",
+      "citation": "evaluation/research-questions.md and research/novelty-claim-ledger.md",
+      "caveat": "The study must include simpler baselines, independent adjudication, burden, and adverse outcomes.",
+      "unresolved_question": null,
+      "action": "keep"
+    }
+  ]
+}

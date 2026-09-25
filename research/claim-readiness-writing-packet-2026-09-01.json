@@ -1,0 +1,46 @@
+{
+  "schema": "openclaw.scientific-writing.packet.v1",
+  "artifact_id": "packet:science-writer:mcrp-claim-readiness-2026-09-01",
+  "purpose": "Audit the MCRP position paper against its novelty ledger and closest-work matrix without changing manuscript prose or authorizing publication.",
+  "audience": "Repository owners and expert reviewers deciding whether the technical supplement's claims and framing match the available evidence.",
+  "section_type": "whole-manuscript close read",
+  "target_latex_fragments": [
+    "paper/position-paper.md:Abstract",
+    "paper/position-paper.md:Established foundations and the remaining design problem",
+    "paper/position-paper.md:An externally enforced lifecycle",
+    "paper/position-paper.md:Assurance, resources, and assessment modes",
+    "paper/position-paper.md:Reference implementation and current evidence"
+  ],
+  "outline": [
+    "Classify the manuscript's prior-art boundary",
+    "Map consequential proposal and implementation claims to local evidence",
+    "Identify novelty overlap and logic gaps",
+    "Recommend framing changes and explicit evidence gates"
+  ],
+  "evidence_packets": [
+    "paper/position-paper.md",
+    "research/novelty-claim-ledger.md",
+    "research/closest-work-matrix.md",
+    "protocol/prospective-lifecycle-v0.2-draft.md",
+    "research/science-writer-adjudication-2026-08-16.md",
+    "research/auto-review-adjudication-70f624c.md",
+    "evaluation/research-questions.md"
+  ],
+  "claim_ledger": "research/claim-readiness-claim-ledger-2026-09-01.json",
+  "bibliography_inputs": ["paper/refs.bib"],
+  "figures_tables": [],
+  "human_questions": [
+    "Should the next review branch apply the five framing changes to manuscript prose, or preserve this audit as decision support only?"
+  ],
+  "constraints": [
+    "No manuscript, bibliography, protocol, implementation, or publication edit",
+    "No scholarly priority or comparative-benefit claim",
+    "Use only the bounded local evidence packet for semantic support decisions"
+  ],
+  "excluded_claims": [
+    "MCRP is the first claim-evidence-provenance graph",
+    "MCRP currently enforces independent verification end to end",
+    "MCRP improves review outcomes",
+    "The synthetic fixture establishes scientific adequacy or interoperability"
+  ]
+}
