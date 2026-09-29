@@ -104,4 +104,27 @@ class AssuranceTests(unittest.TestCase):
         with self.assertRaises(ValueError): replace(self.a,coverage='probably-full')
         with self.assertRaises(ValueError): replace(self.p,rules=list(self.p.rules))
 
+class Review1589Rules(unittest.TestCase):
+    def test_high_subcase_unknown_vs_disputed_vs_authorized_na(self):
+        policy,a=fixture()
+        def subcase(**changes):
+            return replace(a,outcomes=tuple(replace(o,**changes) if o.predicate=='platform:alternative' else o for o in a.outcomes))
+        self.assertEqual(assign(subcase(state='unknown'),policy).current_level,2)
+        disputed=subcase(state='pass',freshness='disputed')
+        r=assign(disputed,policy)
+        self.assertIsNone(r.current_level)
+        self.assertEqual(r.predicate_level,2)  # diagnostic, not historical award
+        released=aggregate((disputed,),policy,((a.context.claim,a.context.scope),),a.context.release,10)
+        self.assertIsNone(released.current_level); self.assertFalse(released.accepted)
+        allowed=subcase(state='not-applicable',exemption_rule='no-relevant-alternative',exemption_actor='domain-steward')
+        self.assertEqual(assign(allowed,policy).current_level,3)
+        challenged=replace(allowed,outcomes=tuple(replace(o,freshness='disputed') if o.predicate=='platform:alternative' else o for o in allowed.outcomes))
+        self.assertIsNone(assign(challenged,policy).current_level)
+
+    def test_missing_gate_zero_differs_from_withheld(self):
+        policy,a=fixture()
+        absent=replace(a,outcomes=tuple(o for o in a.outcomes if o.predicate!='human_scientific_disposition'))
+        self.assertEqual(assign(absent,policy).current_level,0)
+        self.assertIsNone(assign(replace(absent,freshness='pending'),policy).current_level)
+
 if __name__=='__main__': unittest.main()

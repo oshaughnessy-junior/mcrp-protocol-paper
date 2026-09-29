@@ -1,0 +1,419 @@
+{
+  "schema": "mcrp-resource-envelope/0.1",
+  "context": {
+    "workload_id": "synthetic:claim-mean/release-1/full-three-values",
+    "mode": "full",
+    "interval_start": "2026-09-29T09:00:00Z",
+    "interval_end": "2026-09-29T17:00:00Z",
+    "boundary_id": "synthetic-small-reconstruction/assumptions-v1",
+    "boundary_description": "Fictional one-CPU reconstruction; one failed attempt and retry included; setup/review/repair/admin split by role; no real execution measured. Service-internal hardware excluded and unavailable.",
+    "collector": "Fictional recorder; numerical estimates assigned from synthetic-workflow-notes.md, no live instrument",
+    "currency_basis": "Synthetic USD quote assumption on 2026-09-29; tax excluded; no currency conversion or observed invoice",
+    "requirements_vocabulary": "synthetic-workflow-notes.md#requirements-v1"
+  },
+  "coordinates": {
+    "C": {
+      "cpu_device_hours": {
+        "status": "estimated",
+        "unit": "device-hour",
+        "bounds": [
+          "1/20",
+          "1/10"
+        ],
+        "requirements": null,
+        "method": "Fictional scenario bound; see synthetic-workflow-notes.md; not real measurement or calibrated confidence interval",
+        "sources": [
+          "synthetic-workflow-notes.md#assumptions"
+        ],
+        "reason": "",
+        "activity_ids": [
+          "synthetic:C.cpu_device_hours"
+        ]
+      },
+      "gpu_device_hours": {
+        "status": "estimated",
+        "unit": "device-hour",
+        "bounds": [
+          "0",
+          "0"
+        ],
+        "requirements": null,
+        "method": "Fictional scenario bound; see synthetic-workflow-notes.md; not real measurement or calibrated confidence interval",
+        "sources": [
+          "synthetic-workflow-notes.md#assumptions"
+        ],
+        "reason": "",
+        "activity_ids": [
+          "synthetic:C.gpu_device_hours"
+        ]
+      },
+      "wall_time": {
+        "status": "estimated",
+        "unit": "second",
+        "bounds": [
+          "180",
+          "360"
+        ],
+        "requirements": null,
+        "method": "Fictional scenario bound; see synthetic-workflow-notes.md; not real measurement or calibrated confidence interval",
+        "sources": [
+          "synthetic-workflow-notes.md#assumptions"
+        ],
+        "reason": "",
+        "activity_ids": [
+          "synthetic:C.wall_time"
+        ]
+      },
+      "peak_memory": {
+        "status": "estimated",
+        "unit": "byte",
+        "bounds": [
+          "1048576",
+          "2097152"
+        ],
+        "requirements": null,
+        "method": "Fictional scenario bound; see synthetic-workflow-notes.md; not real measurement or calibrated confidence interval",
+        "sources": [
+          "synthetic-workflow-notes.md#assumptions"
+        ],
+        "reason": "",
+        "activity_ids": [
+          "synthetic:C.peak_memory"
+        ]
+      }
+    },
+    "D": {
+      "input_bytes": {
+        "status": "estimated",
+        "unit": "byte",
+        "bounds": [
+          "12",
+          "12"
+        ],
+        "requirements": null,
+        "method": "Fictional scenario bound; see synthetic-workflow-notes.md; not real measurement or calibrated confidence interval",
+        "sources": [
+          "synthetic-workflow-notes.md#assumptions"
+        ],
+        "reason": "",
+        "activity_ids": [
+          "synthetic:D.input_bytes"
+        ]
+      },
+      "transferred_bytes": {
+        "status": "estimated",
+        "unit": "byte",
+        "bounds": [
+          "24",
+          "48"
+        ],
+        "requirements": null,
+        "method": "Fictional scenario bound; see synthetic-workflow-notes.md; not real measurement or calibrated confidence interval",
+        "sources": [
+          "synthetic-workflow-notes.md#assumptions"
+        ],
+        "reason": "",
+        "activity_ids": [
+          "synthetic:D.transferred_bytes"
+        ]
+      },
+      "peak_storage": {
+        "status": "estimated",
+        "unit": "byte",
+        "bounds": [
+          "4096",
+          "8192"
+        ],
+        "requirements": null,
+        "method": "Fictional scenario bound; see synthetic-workflow-notes.md; not real measurement or calibrated confidence interval",
+        "sources": [
+          "synthetic-workflow-notes.md#assumptions"
+        ],
+        "reason": "",
+        "activity_ids": [
+          "synthetic:D.peak_storage"
+        ]
+      },
+      "retained_bytes": {
+        "status": "estimated",
+        "unit": "byte",
+        "bounds": [
+          "1024",
+          "2048"
+        ],
+        "requirements": null,
+        "method": "Fictional scenario bound; see synthetic-workflow-notes.md; not real measurement or calibrated confidence interval",
+        "sources": [
+          "synthetic-workflow-notes.md#assumptions"
+        ],
+        "reason": "",
+        "activity_ids": [
+          "synthetic:D.retained_bytes"
+        ]
+      },
+      "retention_duration": {
+        "status": "estimated",
+        "unit": "second",
+        "bounds": [
+          "604800",
+          "604800"
+        ],
+        "requirements": null,
+        "method": "Fictional scenario bound; see synthetic-workflow-notes.md; not real measurement or calibrated confidence interval",
+        "sources": [
+          "synthetic-workflow-notes.md#assumptions"
+        ],
+        "reason": "",
+        "activity_ids": [
+          "synthetic:D.retention_duration"
+        ]
+      }
+    },
+    "P": {
+      "requirements": {
+        "status": "observed",
+        "unit": "conjunctive-requirements",
+        "bounds": null,
+        "requirements": [
+          "python3-standard-library",
+          "one-cpu-no-gpu"
+        ],
+        "method": "Read the declared requirements of this fictional scenario, not an observation of executed research",
+        "sources": [
+          "synthetic-workflow-notes.md#requirements-v1"
+        ],
+        "reason": "",
+        "activity_ids": [
+          "synthetic:P.requirements"
+        ]
+      }
+    },
+    "X": {
+      "requirements": {
+        "status": "observed",
+        "unit": "conjunctive-requirements",
+        "bounds": null,
+        "requirements": [
+          "public-synthetic-inputs",
+          "no-restricted-data"
+        ],
+        "method": "Read the declared requirements of this fictional scenario, not an observation of executed research",
+        "sources": [
+          "synthetic-workflow-notes.md#requirements-v1"
+        ],
+        "reason": "",
+        "activity_ids": [
+          "synthetic:X.requirements"
+        ]
+      },
+      "access_wait": {
+        "status": "estimated",
+        "unit": "second",
+        "bounds": [
+          "0",
+          "0"
+        ],
+        "requirements": null,
+        "method": "Fictional scenario bound; see synthetic-workflow-notes.md; not real measurement or calibrated confidence interval",
+        "sources": [
+          "synthetic-workflow-notes.md#assumptions"
+        ],
+        "reason": "",
+        "activity_ids": [
+          "synthetic:X.access_wait"
+        ]
+      }
+    },
+    "H": {
+      "setup": {
+        "status": "estimated",
+        "unit": "person-hour",
+        "bounds": [
+          "1/4",
+          "1/2"
+        ],
+        "requirements": null,
+        "method": "Fictional scenario bound; see synthetic-workflow-notes.md; not real measurement or calibrated confidence interval",
+        "sources": [
+          "synthetic-workflow-notes.md#assumptions"
+        ],
+        "reason": "",
+        "activity_ids": [
+          "synthetic:H.setup"
+        ]
+      },
+      "review": {
+        "status": "estimated",
+        "unit": "person-hour",
+        "bounds": [
+          "1/2",
+          "1"
+        ],
+        "requirements": null,
+        "method": "Fictional scenario bound; see synthetic-workflow-notes.md; not real measurement or calibrated confidence interval",
+        "sources": [
+          "synthetic-workflow-notes.md#assumptions"
+        ],
+        "reason": "",
+        "activity_ids": [
+          "synthetic:H.review"
+        ]
+      },
+      "operation": {
+        "status": "estimated",
+        "unit": "person-hour",
+        "bounds": [
+          "1/20",
+          "1/10"
+        ],
+        "requirements": null,
+        "method": "Fictional scenario bound; see synthetic-workflow-notes.md; not real measurement or calibrated confidence interval",
+        "sources": [
+          "synthetic-workflow-notes.md#assumptions"
+        ],
+        "reason": "",
+        "activity_ids": [
+          "synthetic:H.operation"
+        ]
+      },
+      "repair": {
+        "status": "estimated",
+        "unit": "person-hour",
+        "bounds": [
+          "1/10",
+          "1/5"
+        ],
+        "requirements": null,
+        "method": "Fictional scenario bound; see synthetic-workflow-notes.md; not real measurement or calibrated confidence interval",
+        "sources": [
+          "synthetic-workflow-notes.md#assumptions"
+        ],
+        "reason": "",
+        "activity_ids": [
+          "synthetic:H.repair"
+        ]
+      },
+      "administration": {
+        "status": "estimated",
+        "unit": "person-hour",
+        "bounds": [
+          "1/10",
+          "1/5"
+        ],
+        "requirements": null,
+        "method": "Fictional scenario bound; see synthetic-workflow-notes.md; not real measurement or calibrated confidence interval",
+        "sources": [
+          "synthetic-workflow-notes.md#assumptions"
+        ],
+        "reason": "",
+        "activity_ids": [
+          "synthetic:H.administration"
+        ]
+      }
+    },
+    "A": {
+      "requests": {
+        "status": "estimated",
+        "unit": "request",
+        "bounds": [
+          "1",
+          "2"
+        ],
+        "requirements": null,
+        "method": "Fictional scenario bound; see synthetic-workflow-notes.md; not real measurement or calibrated confidence interval",
+        "sources": [
+          "synthetic-workflow-notes.md#assumptions"
+        ],
+        "reason": "",
+        "activity_ids": [
+          "synthetic:A.requests"
+        ]
+      },
+      "input_tokens": {
+        "status": "estimated",
+        "unit": "token",
+        "bounds": [
+          "500",
+          "1000"
+        ],
+        "requirements": null,
+        "method": "Fictional scenario bound; see synthetic-workflow-notes.md; not real measurement or calibrated confidence interval",
+        "sources": [
+          "synthetic-workflow-notes.md#assumptions"
+        ],
+        "reason": "",
+        "activity_ids": [
+          "synthetic:A.input_tokens"
+        ]
+      },
+      "output_tokens": {
+        "status": "estimated",
+        "unit": "token",
+        "bounds": [
+          "100",
+          "200"
+        ],
+        "requirements": null,
+        "method": "Fictional scenario bound; see synthetic-workflow-notes.md; not real measurement or calibrated confidence interval",
+        "sources": [
+          "synthetic-workflow-notes.md#assumptions"
+        ],
+        "reason": "",
+        "activity_ids": [
+          "synthetic:A.output_tokens"
+        ]
+      },
+      "tool_calls": {
+        "status": "estimated",
+        "unit": "call",
+        "bounds": [
+          "0",
+          "0"
+        ],
+        "requirements": null,
+        "method": "Fictional scenario bound; see synthetic-workflow-notes.md; not real measurement or calibrated confidence interval",
+        "sources": [
+          "synthetic-workflow-notes.md#assumptions"
+        ],
+        "reason": "",
+        "activity_ids": [
+          "synthetic:A.tool_calls"
+        ]
+      },
+      "runtime": {
+        "status": "estimated",
+        "unit": "second",
+        "bounds": [
+          "5",
+          "20"
+        ],
+        "requirements": null,
+        "method": "Fictional scenario bound; see synthetic-workflow-notes.md; not real measurement or calibrated confidence interval",
+        "sources": [
+          "synthetic-workflow-notes.md#assumptions"
+        ],
+        "reason": "",
+        "activity_ids": [
+          "synthetic:A.runtime"
+        ]
+      },
+      "billed_cost": {
+        "status": "estimated",
+        "unit": "USD",
+        "bounds": [
+          "1/100",
+          "2/100"
+        ],
+        "requirements": null,
+        "method": "Fictional scenario bound; see synthetic-workflow-notes.md; not real measurement or calibrated confidence interval",
+        "sources": [
+          "synthetic-workflow-notes.md#assumptions"
+        ],
+        "reason": "",
+        "activity_ids": [
+          "synthetic:A.billed_cost"
+        ]
+      }
+    }
+  }
+}

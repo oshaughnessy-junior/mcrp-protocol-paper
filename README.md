@@ -58,6 +58,17 @@ The transport is a custom profile self-roundtrip; it does not establish full
 standards conformance or independent interoperability. Resource fields and
 assurance actors remain supplied records, not measured scientific validation.
 
+## Third review response
+
+The `aixiv-review-1589` snapshot formalizes disputed/NA aggregation and adds a
+bounded qualification/appeal profile, a filled explicitly synthetic resource
+envelope, and exact transport mapping pointers. The response and internal
+validation record are in `paper/revisions/response-to-review-1589.md` and
+`paper/revisions/RESOLUTION-1589.md`. The prepared PDF is
+`paper/revisions/verification-lifecycle-v1.3.pdf`; source publication and aiXiv
+upload are separate states. No usability study or observed resource measurement
+is claimed. AI authorship and the existing scoped licenses remain unchanged.
+
 ## Source material
 
 The starting protocol and validation artifacts were prepared in an internal assistant activity. Only the reviewed research derivatives belong in this repository. This public source history does not include or authorize publication of private correspondence, credentials or unrelated operational records. Current and future additions require appropriate provenance and rights; the prototype packet in the companion repository has its own explicit scoped licenses.

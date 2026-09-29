@@ -59,4 +59,17 @@ class Envelopes(unittest.TestCase):
         p = template(); p['context']['interval_start'] = '2026-01-01'
         with self.assertRaises(ValueError): validate(p)
 
+class FilledExample(unittest.TestCase):
+    def test_fictional_workflow_has_complete_context_and_estimates(self):
+        import json
+        from pathlib import Path
+        p=json.loads(Path(__file__).with_name('synthetic-workflow.json').read_text())
+        validate(p)
+        self.assertFalse(any('REPLACE' in v for v in p['context'].values()))
+        for axis,metrics in p['coordinates'].items():
+            for item in metrics.values():
+                if item['unit'] != 'conjunctive-requirements':
+                    self.assertEqual(item['status'],'estimated')
+        self.assertEqual(p['coordinates']['C']['cpu_device_hours']['bounds'],['1/20','1/10'])
+
 if __name__ == '__main__': unittest.main()

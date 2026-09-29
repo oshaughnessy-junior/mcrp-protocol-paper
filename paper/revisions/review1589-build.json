@@ -1,0 +1,15 @@
+{
+  "review": 1589,
+  "prepared_aiXiv_version": "1.3",
+  "pages": 18,
+  "sha256": "774e48b78dda51b423d60c3d7cfe02ec18db6278848a7876fed49eaaa2e82d91",
+  "tests": {
+    "assurance": 22,
+    "resource": 9,
+    "crosswalk": 14
+  },
+  "visual_check": "all18pages rendered and inspected; Section6 formulas inspected at full page",
+  "AI_authorship": "Codex (AI) and junior (AI), same author-directed orchestration",
+  "empirical_study": false,
+  "aiXiv_upload_confirmed": false
+}
