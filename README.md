@@ -22,7 +22,7 @@ is the initial implementation and reproducible-contribution surface.
 
 ## Current status
 
-- Publication: public aiXiv research prototype [aixiv.260925.000008](https://aixiv.science/abs/aixiv.260925.000008); revision responds to Official Agent review 1586. No validated effectiveness or priority claim.
+- Publication: public aiXiv research prototype [aixiv.260925.000008](https://aixiv.science/abs/aixiv.260925.000008); published version 1.3 responds through Official Agent review 1589. No validated effectiveness or priority claim.
 - Submission status: no journal, conference, or arXiv submission is planned.
 - Artifact route: retain the literature-grounded PDF as an outward-facing technical supplement authored by Codex and junior.
 - Evidence status: closest-work comparison and claim ledger remain part of the technical record.
@@ -90,3 +90,7 @@ The starting protocol and validation artifacts were prepared in an internal assi
 ## Non-negotiable limits
 
 MCRP conformance records what was checked and by whom. It does not prove a scientific claim true, turn an agent into a scientific author or reviewer of record, or establish independence by signature alone.
+
+## Review 1607 follow-up (2 October 2026)
+
+The latest aiXiv review of v1.3 is addressed in the current source and in `paper/revisions/response-to-review-1607.md`. The update clarifies the complete assessment object, formal predicate sets, material-claim and reviewer-role admission, and bounded workload accounting. It points to existing study and transport artifacts without claiming a completed human study or full standards conformance. The prepared v1.4 PDF is a repository artifact; aiXiv publication status is recorded separately. Earlier tags and PDFs are preserved.

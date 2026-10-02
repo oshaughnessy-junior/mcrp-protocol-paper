@@ -1,4 +1,4 @@
-> **Document status.** AI-authored research prototype by Codex and junior, revised in response to aiXiv Official Agent reviews 1586, 1587 and 1589 of aixiv.260925.000008, versions 1.0, 1.1 and 1.2. This is a lifecycle-policy proposal, not a validated intervention or certification standard. No scholarly priority or demonstrated improvement is asserted.
+> **Document status.** AI-authored research prototype by Codex and junior, revised in response to aiXiv Official Agent reviews 1586, 1587, 1589 and 1607 of aixiv.260925.000008, versions 1.0, 1.1, 1.2 and 1.3. This is a lifecycle-policy proposal, not a validated intervention or certification standard. No scholarly priority or demonstrated improvement is asserted.
 
 ## Abstract
 
@@ -32,7 +32,7 @@ The closest execution-level collision is Paper-replication, which treats selecte
 
 Traxia is the closest collision for broad agent-native publication and review. It proposes signed agent identities, reasoning traces, claim confidence, immutable contribution logs, tiered peer review, human–agent collaboration, reputation, and contradiction detection; its paper reports architectural foundations and a partial prototype rather than empirical validation [@traxia-2026]. MCRP consequently makes no priority claim for agent identity, signatures, immutable contribution records, staged review, or contradiction handling. A signature establishes integrity and signer identity, not scientific adequacy or reviewer independence.
 
-The residual MCRP proposal is narrower: a **prospective, externally enforced, claim-versioned lifecycle**. Before execution, a candidate fixes claim-scoped acceptance predicates and required approver roles. A claim transition may then depend on immutable run evidence and a separately authorized check. Approvals are scoped to a release and affected claims; declared dependency changes invalidate the decisions they can reach. Records should export to established claim, provenance, and research-object standards. This lifecycle is an object for evaluation, not a demonstrated improvement and not a claim that its constituent graph or review mechanisms are new. Full conformance crosswalks for EVI, Micropublications, Nanopublications, PROV-AGENT, and RO-Crate have not been completed. Section 8.1 now supplies one bounded RO-Crate 1.2 field-preservation example; it does not claim complete conformance or independent interoperability. MCRP also has not been compared directly with Paper-replication or Traxia on prospectively fixed acceptance, mutation-driven invalidation, interruption recovery, independent authorization, false completion, or stale-claim transitions.
+The residual MCRP proposal is narrower: a **prospective, externally enforced, claim-versioned lifecycle**. Before execution, a candidate fixes claim-scoped acceptance predicates and required approver roles. A claim transition may then depend on immutable run evidence and a separately authorized check. Approvals are scoped to a release and affected claims; declared dependency changes invalidate the decisions they can reach. Records should export to established claim, provenance, and research-object standards. This lifecycle is an object for evaluation, not a demonstrated improvement and not a claim that its constituent graph or review mechanisms are new. Full conformance crosswalks for EVI, Micropublications, Nanopublications, PROV-AGENT, and RO-Crate have not been completed. Section 8.2 now supplies one bounded RO-Crate 1.2 field-preservation example; it does not claim complete conformance or independent interoperability. MCRP also has not been compared directly with Paper-replication or Traxia on prospectively fixed acceptance, mutation-driven invalidation, interruption recovery, independent authorization, false completion, or stale-claim transitions.
 
 ### 2.1 Decomposing the design contribution
 
@@ -47,7 +47,7 @@ absent from that system.
 |---|---|---|---|
 | Claim–evidence graph with support and challenge | Micropublications and EVI [@micropublications-2014; @evi-2021] | Adopted | Material claims name scoped acceptance predicates and required decisions; the graph alone is not the contribution. |
 | Entity, execution, attribution, and derivation records | PROV-O [@w3c-prov-o-2013] | Adopted | Bind each decision to the exact claim and release under review. |
-| Packaged research objects and run context | RO-Crate and Workflow Run RO-Crate [@ro-crate-1.2; @workflow-run-ro-crate-2024] | Adopted representation target | Preserve claim scope and decision state across exports; general and independent-consumer compatibility remains unimplemented; Section 8.1 supplies a bounded self-round-trip example. |
+| Packaged research objects and run context | RO-Crate and Workflow Run RO-Crate [@ro-crate-1.2; @workflow-run-ro-crate-2024] | Adopted representation target | Preserve claim scope and decision state across exports; general and independent-consumer compatibility remains unimplemented; Section 8.2 supplies a bounded self-round-trip example. |
 | Content identities and version-specific archival records | CWLProv, Nanopublications, and archive versioning [@khan-cwlprov-2019; @nanopublications-2018; @zenodo-doi-versioning] | Adopted | A material edit creates a successor; historical acceptance is immutable. |
 | Independent execution and external completion checking | CODECHECK and Paper-replication [@nust-codecheck-2021; @paper-replication-2026] | Adapted | Fix claim-level predicates prospectively and require a recorded authorization boundary for verification. |
 | Execution distinct from scientific judgment | CODECHECK and artifact-review practice [@nust-codecheck-2021; @acm-artifact-badging-2020] | Adopted distinction | Machine outcomes cannot populate the qualified human disposition field. |
@@ -78,6 +78,50 @@ The review graph must be traversable in both directions. A reviewer can move fro
 Artifacts are classified as raw, intermediate, derived, or presentation objects relative to a declared custody boundary. “Raw” does not mean metaphysically original; it means earliest available within the record. If the workflow begins with provider-calibrated data, that boundary and provider process remain declared trust leaves. Each included object has a content digest, schema or media type, role, size, acquisition or creation time, custodian, access status, and resolver. For an external or restricted object that cannot be hashed directly, the release records the strongest available version identity and the resulting loss of inspectability.
 
 This graph is not asserted to be a new data structure. Its role in MCRP is normative: material claims block acceptance when required paths, identities, tests, or human dispositions are missing. The sufficiency and usability of the proposed required fields have not been evaluated across scientific domains; multi-domain trials are required before treating the present field set as a credible common profile.
+
+### 4.1 A bounded materiality and role decision procedure
+
+Materiality is a recorded judgment, not a predicate that text extraction can
+establish. Before the designated verification run, the author proposes an inventory
+and a separately authorized admission assessor reviews it using four steps:
+
+1. Enumerate the propositions supporting the abstract, principal results,
+   interpretation, conclusion and safety statements. For each, state the intended
+   use, population/regime and quantity or qualitative assertion. A sentence can
+   contain several propositions; repeated prose need not create duplicate claims.
+2. Apply a counterfactual: if this proposition were removed, materially narrowed,
+   or false, which named principal statement or intended use would change? Record
+   that connection or a reason for exclusion. Include negative findings and
+   pivotal calibration, selection or uncertainty assumptions; an upstream
+   assumption can be a named dependency rather than a separately advertised result.
+3. For each included claim, specify an acceptance contract: target identity,
+   scope, evidence and exclusions, check procedure, prospective threshold or
+   qualitative decision criteria, and permitted outcomes including unknown.
+   Derive required competencies from plausible failure causes. Scientific criteria
+   can require reasoned human judgment; a numeric tolerance alone is not enough.
+4. Freeze the inventory, contract and role requirements for the candidate. The
+   admission assessor records inclusions, exclusions and unresolved objections.
+   A materiality dispute remains pending under Section 5.3; unreviewed exclusions
+   cannot quietly shrink the release-wide denominator. Later changes create a new
+   version and undergo the Section 5.5 scope-delta process.
+
+The rule is relevance to the declared principal conclusions, not prominence,
+word count, author prestige or ease of checking. Roles express competencies and
+authority, not a mandatory headcount: one qualified person can perform compatible
+roles with separate recorded acts, while author/verifier and original/appeal
+control restrictions still apply. Shared checks can serve several claims only
+when the report explicitly covers each claim's contract.
+
+| Illustrative computational claim | Material boundary and prospective check | Competencies to assign |
+|---|---|---|
+| A simulated physical parameter lies within a stated uncertainty interval. | Removing the interval changes the main inference. Reconstruct the estimator, inspect calibration/systematic assumptions, and predeclare numerical tolerance and sensitivity cases. | Numerical execution plus domain measurement/calibration and uncertainty assessment; identical plotted values do not discharge the latter. |
+| A classifier improves a stated metric on a named population. | The population, comparator and metric are part of the claim. Check split provenance/leakage, fixed evaluation code, uncertainty and the predefined comparison; changing the test population changes scope. | Data/evaluation design, statistical inference and execution custody; an agent-generated score is not a human scientific disposition. |
+| A numerical solver meets a convergence/error claim in a specified regime. | A runtime or residual trace alone may not establish solution error. State reference cases, norm, stopping rule, regime and failure controls before execution. | Numerical analysis and implementation/reconstruction competence; excluded regimes remain outside coverage. |
+
+These are profile-design examples, not completed reviews or domain-wide standards.
+A useful inter-reviewer exercise should compare proposed inclusions, exclusions,
+role assignments and their reasons before reconciling them; agreement cannot by
+itself establish that both reviewers found every material dependency.
 
 ## 5. An externally enforced lifecycle
 
@@ -197,7 +241,34 @@ The formal definition is in Appendix A, which was already part of version 1.1. A
 
 For a concrete declared graph, let data `x@1` feed execution `e@1`, which feeds claim `c@1`; unrelated data `y@1` feeds claim `d@1`. A successor changes x to `x@2` but retains both claim contracts. The dirty root x reaches e and c, so c's current-use decision becomes pending even though its words and contract are unchanged. The graph leaves d untouched, but d is merely eligible for carry-forward after a current old approval and a separately authorized, successor-bound scope-delta disposition covering omitted dependencies and custody changes. No such disposition means no carry-forward. If the successor instead changes c's acceptance tolerance while preserving its prose, its contract version changes directly and also blocks carry-forward.
 
-The old/new union traversal preserves deleted lineage; removing the x-to-e edge cannot erase its old influence. Expired, withdrawn, pending or disputed old approval fails the currentness condition even without a detected dependency event. These operations establish an explicit review obligation, never a conclusion that c or d is scientifically false. The [executable cases](https://github.com/oshaughnessy-junior/mcrp-protocol-paper/tree/aixiv-review-1589/examples/revision-semantics) include removed edges, changed contracts, expiry and deliberately undetected hidden dependencies.
+The old/new union traversal preserves deleted lineage; removing the x-to-e edge cannot erase its old influence. Expired, withdrawn, pending or disputed old approval fails the currentness condition even without a detected dependency event. These operations establish an explicit review obligation, never a conclusion that c or d is scientifically false. The [executable cases](https://github.com/oshaughnessy-junior/mcrp-protocol-paper/tree/aixiv-review-1607/examples/revision-semantics) include removed edges, changed contracts, expiry and deliberately undetected hidden dependencies.
+
+#### Main-body carry-forward rule
+
+For old/new releases $S,S'$, let $C,C'$ be their frozen claim inventories and
+$\nu(c),\nu'(c)$ exact claim-contract identities (text, scope, assumptions,
+acceptance predicates and required roles). With propagating dependency edges
+pointing upstream to dependent, let $\Delta$ contain changed/added/removed object
+versions, targets of changed propagating edges, changed claim membership and
+identified event roots. Define $A=\operatorname{Reach}_{E\cup E'}(\Delta)$,
+including roots themselves. Old and new edges are both retained for this test.
+Then the Appendix A rule is, compactly,
+
+$$\begin{aligned}
+\operatorname{Eligible}(d,c,S,S',\sigma;t,p)\iff{}&
+\operatorname{Approved}(d,r,c,\nu(c))\land\operatorname{DecisionCurrent}(d,t,p)\\
+&\land c\in C\cap C'\land m(c)=\mathrm{unchanged}\land\nu(c)=\nu'(c)\\
+&\land c\notin A\land\operatorname{AuthorizedUnaffected}(\sigma;r,r',c).
+\end{aligned}$$
+
+`DecisionCurrent` checks the old decision's policy, issue/expiry interval,
+revocation, pending and disputed status as defined in Appendix A. The separately
+authorized $\sigma$ must address custody/scope changes and plausible missing
+dependencies; graph non-reachability alone never permits carry-forward. Eligibility
+still requires a new authorized successor-bound record before use. Appendix A
+retains the typed graph definitions, fixed-point proof and executable
+counterexamples. This is a main-body summary of that same rule, not a second
+algorithm or a claim that all event roots can be discovered.
 
 ### 5.6 Freshness and failure
 
@@ -216,23 +287,57 @@ p, and assessment time t. Each required predicate receives a value in
 {pass, fail, unknown, not-applicable}, with its evidence reference, assessing role,
 and rationale. Missing evidence is unknown, never pass. Only a specific platform comparison or individual sensitivity subcase in S_3 may be marked not-applicable, under a predeclared domain applicability rule and a separately authorized rationale. The overall sensitivity obligation remains required. No other core predicate is exemptible; missing resources or access cannot waive it. The aggregate cannot be improved by deleting difficult requirements after observing results.
 
-Let S_1 contain the required predicates for separately authorized external admission, content identity, material-claim
-mapping, provenance paths within the declared custody boundary, explicit trust
-leaves, claim-specific acceptance tests, negative/adversarial controls,
-version-specific archive identity, and qualified independent scientific disposition.
-Let S_2 contain all S_1 predicates plus reviewer-controlled reconstruction,
-execution, and claim-result comparisons over the stated assessment scope. Let S_3
-contain all S_2 predicates plus an independent method/data challenge, declared
-sensitivity checks for material choices, applicable platform comparisons, and an
-exercised freshness/failure response. Each applicable test needs a prospective
-procedure and decision threshold. Numerical tolerances are claim-specific and
-must be justified scientifically; this protocol does not supply a universal
-floating-point threshold or a universal definition of adequate science.
+For a fixed policy $p$, the exact nested sets in the finite implemented profile
+are (identifiers correspond to Table 2 and the code):
 
-For an assessment $a=(c,r,s,p,t)$ let $O_a$ be its supplied outcome records.
-Their predicate identifiers must be unique members of the frozen policy inventory
-and their bindings must equal $a$; wrong bindings, unknown identifiers, duplicate
-records or a wrong policy are rejected as invalid input, not assigned level zero.
+$$\begin{aligned}
+S_1={}&\{\text{external\_admission},\text{content\_identity},\text{claim\_mapping},\\
+&\text{provenance},\text{trust\_leaves},\text{acceptance\_tests},\text{negative\_controls},\\
+&\text{archive\_identity},\text{human\_scientific\_disposition}\},\\
+S_2={}&S_1\cup\{\text{non\_author\_reconstruction},\text{execution},\text{comparison}\},\\
+S_3(p)={}&S_2\cup\{\text{independent\_challenge},\text{overall\_sensitivity},
+\text{freshness\_exercised}\}\cup\mathcal P_p\cup\mathcal H_p.
+\end{aligned}$$
+
+$\mathcal P_p$ is the finite set of distinct `platform:<subcase>` identifiers and
+$\mathcal H_p$ the finite set of distinct `sensitivity:<subcase>` identifiers
+published before assessment. This implemented profile requires
+$\mathcal P_p\ne\varnothing$; $\mathcal H_p$ may be empty. The policy catalog has
+exactly one rule per member of $S_3(p)$, no other predicate families, permitted
+assessing actors, any exact subcase exemption rule and its separate authorizers,
+and coverage authorizers. Thus S3 is the complete policy inventory, including
+subcases later found inapplicable. Write $S_\ell$ below for these policy-fixed sets.
+The generic proposal can accommodate other published domain inventories, but this
+closed profile's code and guarantees do not automatically extend to them.
+
+Separate the binding key from the full assessment object:
+
+$$\kappa=(c,r,s,p,t),\qquad
+ a=(\kappa,\mathrm{mode},\mathrm{coverage},O_a,f_a,\gamma_a).$$
+
+Here $c,r,s,p$ identify claim, immutable release, exact scope and policy, and $t$
+is the assessment time. Mode and coverage take the values above; $f_a$ is the
+assessment freshness status; $\gamma_a$ contains any full-scope coverage evidence,
+authorized actor and rationale. Each supplied outcome in $O_a$ records
+
+$$\begin{aligned}
+o_z=(&z,\kappa,\mathrm{value},\mathrm{evidence},\mathrm{actor},\mathrm{role},\\
+ &\mathrm{rationale},f_z,\mathrm{expiry},\mathrm{exemptionRule},\mathrm{exemptionActor}).
+\end{aligned}$$
+Freshness $f_a,f_z$ is current, stale, expired, withdrawn, pending or disputed;
+expiry is absent or a nonnegative time, with an exclusive upper boundary. The toy
+uses nonnegative integer ticks rather than claiming a trusted wall clock. The
+scope/identity fields must be nonempty. Missing optional coverage/exemption
+fields never supply authority by default.
+
+Outcome identifiers must be unique members of $S_3(p)$ and their bindings equal
+$\kappa$; wrong bindings, unknown identifiers, duplicate records or a wrong policy
+are rejected as invalid input, not assigned level zero. In the equations below,
+$c,r,s,p,t$ are the components of $\kappa(a)$, `status(a)` means $f_a$, and
+`status(o_z)` means $f_z$. The functions consume the full object $a$, not merely
+its binding key. This matches `Context`, `Assessment`, `Outcome` and `Policy` in
+the asserted-input calculator.
+
 The outcome state is in {pass, fail, unknown, not-applicable}. **Disputed is a
 separate freshness/authority status**, not a fifth outcome value.
 
@@ -389,7 +494,7 @@ material claims, a mismatched release/policy/time, or an unjustified full-scope
 `slice`/`checkpoint` assessment cannot produce an aggregate. An empty claim
 inventory cannot pass vacuously. Level 0 is disclosure, not accepted conformance.
 
-The [executable assessment profile](https://github.com/oshaughnessy-junior/mcrp-protocol-paper/tree/aixiv-review-1589/examples/assurance-assignment) exposes these
+The [executable assessment profile](https://github.com/oshaughnessy-junior/mcrp-protocol-paper/tree/aixiv-review-1607/examples/assurance-assignment) exposes these
 identifiers and consumes immutable outcome records. Its demonstration and tests
 reproduce the gate hierarchy, forbidden exemptions, currentness, and scope
 aggregation. It checks supplied assertions and declared actor allow-lists; it
@@ -402,7 +507,7 @@ an MCRP-3 award to this manuscript or its prototype.
 Assurance is distinct from resource burden. RRP[C,D,P,X,H,A] records computation, data/storage, platform, access/governance, human effort and agent service consumption. It is not an intelligence or assurance score.
 
 We provide a concrete reporting profile, `mcrp-resource-envelope/0.1`, and an
-[executable validator/comparator and complete JSON template](https://github.com/oshaughnessy-junior/mcrp-protocol-paper/tree/aixiv-review-1589/evaluation/resource-reporting). This is a
+[executable validator/comparator and complete JSON template](https://github.com/oshaughnessy-junior/mcrp-protocol-paper/tree/aixiv-review-1607/evaluation/resource-reporting). This is a
 measurement protocol proposal, not calibrated resource data. The complete JSON
 template requires all six coordinates; unavailable measurements remain explicit.
 
@@ -506,9 +611,56 @@ A staged adoption path is preferable to mandatory maximal capture. A project can
 
 Adoption cost is a central unresolved question. Detailed manifests can burden authors and reviewers, and poorly designed automation can create provenance theater rather than useful scrutiny. Domain profiles may improve relevance, but they can also fragment interoperability. Restricted data, proprietary services, and facility-scale computation will remain less inspectable. Incentives for independent verifiers and qualified scientific reviewers are not supplied by a schema. No study has measured MCRP authoring time, researcher experience, reviewer time or comprehension, or maintenance across a dependency or data revision.
 
-### 8.1 A bounded RO-Crate 1.2 transport example
+### 8.1 An overhead accounting model, not a runtime prediction
 
-We now provide a concrete [SRR-subset export/import example](https://github.com/oshaughnessy-junior/mcrp-protocol-paper/tree/aixiv-review-1589/examples/ro-crate-crosswalk), deliberately targeting RO-Crate 1.2 rather than claiming the newest version. Following its metadata and profile rules [@ro-crate-1.2], the crate contains a metadata descriptor, root Dataset, File and CreativeWork entities, and a bundled profile description. Standard terms carry discovery metadata; an explicit experimental namespace carries MCRP-specific fields. The namespace uses the reserved example.org domain and is not claimed to be a persistent ontology service.
+No observation supports an expected cost for a typical MCRP project. A useful
+planning decomposition nevertheless separates ordinary scientific work from the
+added recording and assurance obligations. Let $n$ be material claims, $e$ declared
+links, $k$ distinct check executions, $j$ reviewer mandates, and $u$ amendments in
+a fixed planning interval. In person-hours, a simple additive model is
+
+$$\begin{aligned}
+T={}&T_{setup}+nh_c+eh_e+\sum_{i=1}^{k}h_i^{check}
+ +\sum_{q=1}^{j}h_q^{mandate}+h^{ops}\\
+ &+\sum_{b=1}^{u}\left(h_b^{triage}+h_b^{delta}
+ +\sum_{i\in J_b}h_{bi}^{recheck}+\sum_{c\in C_b}h_{bc}^{decision}\right).
+\end{aligned}$$
+
+Each term counts distinct activity once: per-claim contract/coverage recording,
+link capture, actual checks, qualification/conflict work, operations including
+refused requests and disputes, and amendment triage/scope-delta review plus required
+recheck and claim-decision work. $J_b$ and $C_b$ are affected check/claim sets after
+legitimate deduplication. Initial $h_i^{check}$ includes any required scientific
+judgment not already charged to contract recording; no hidden extra reviewer-hour
+is free. Effort coefficients are measured or explicitly estimated, and can grow
+with task difficulty; the formula asserts no constant empirical productivity.
+Compared with a matched simpler workflow of effort $T_B$, incremental overhead is
+$T-T_B$, not all of $T$: ordinary review already performs some of these activities.
+A positive cost could still be worthwhile if useful coverage or correction improves,
+but neither sign nor benefit is established here.
+
+Graph propagation by a visited-set traversal costs
+$O(|V\cup V'|+|E\cup E'|)$ after dirty roots are supplied. This algorithmic bound does not bound human
+scientific reassessment: one shared calibration change can affect all $n$ claims.
+If amendments arrive at mean rate $\lambda$ with finite mean handling effort
+$h_{amend}$, maintenance alone demands $\lambda h_{amend}$ person-hours per time
+unit. Added review, qualification and dispute demand must fit the same
+skill-specific capacity. Mean slack is not a latency or deadline guarantee;
+correlated amendments and missing specialists can dominate the average.
+
+Reduce overhead by importing identifiers and logs, checking shared evidence once
+with explicit multi-claim coverage, reusing qualified role evidence while it
+remains current, and batching notifications. Do not reuse a scientific judgment
+outside its scope, double-count shared team labor, or equate fewer tickets with
+less necessary reassessment. Narrow assessment modes can lower cost only by
+reporting their narrower coverage; higher levels remain optional while core gates
+for any claimed level remain mandatory. The resource envelope and proposed
+matched evaluation supply the measurement boundary for this model, not fitted
+coefficients or a favorable simulation result.
+
+### 8.2 A bounded RO-Crate 1.2 transport example
+
+We now provide a concrete [SRR-subset export/import example](https://github.com/oshaughnessy-junior/mcrp-protocol-paper/tree/aixiv-review-1607/examples/ro-crate-crosswalk), deliberately targeting RO-Crate 1.2 rather than claiming the newest version. Following its metadata and profile rules [@ro-crate-1.2], the crate contains a metadata descriptor, root Dataset, File and CreativeWork entities, and a bundled profile description. Standard terms carry discovery metadata; an explicit experimental namespace carries MCRP-specific fields. The namespace uses the reserved example.org domain and is not claimed to be a persistent ontology service.
 
 | Source meaning | Representation and preservation boundary |
 |---|---|
@@ -589,7 +741,7 @@ setting. No current synthetic test establishes any of these empirical prediction
 
 A smallest useful external exercise would ask a group outside the author-directed team to select a public workflow, freeze a material-claim inventory and amendment oracle, and run paired B2/M tasks with affected cases and unaffected controls under declared budgets. It must retain every offered task, including failures, refusals and timeouts, and report the complete decision table and preparation/review costs. One workflow can expose a failure or feasibility issue; it cannot establish population effectiveness. A comparative study needs the prespecified clusters, margins and inference described above.
 
-The [benchmark scaffold](https://github.com/oshaughnessy-junior/mcrp-protocol-paper/tree/aixiv-review-1589/evaluation/lifecycle-benchmark) supplies an exact calculator and fields to freeze, not an enrolled or registered study. Its descriptive success rule requires reduced stale reliance, positive acceptance of unaffected controls, bounded loss of control acceptance and bounded false invalidation. Refusing every task fails the positive control requirement. Abstaining only on affected tasks can reduce stale reliance but does not establish localization; that claim requires the separate sensitivity endpoint. Unknown population prevalence and unmeasured cost prevent converting these synthetic examples into a deployment benefit estimate.
+The [benchmark scaffold](https://github.com/oshaughnessy-junior/mcrp-protocol-paper/tree/aixiv-review-1607/evaluation/lifecycle-benchmark) supplies an exact calculator and fields to freeze, not an enrolled or registered study. Its descriptive success rule requires reduced stale reliance, positive acceptance of unaffected controls, bounded loss of control acceptance and bounded false invalidation. Refusing every task fails the positive control requirement. Abstaining only on affected tasks can reduce stale reliance but does not establish localization; that claim requires the separate sensitivity endpoint. Unknown population prevalence and unmeasured cost prevent converting these synthetic examples into a deployment benefit estimate.
 
 ## 10. Conclusion
 
@@ -704,7 +856,7 @@ approval, so it is not enough for current carry-forward. For assessment time $t$
 and policy identity $p$, define
 
 $$\begin{aligned}
-\operatorname{Current}(d,t,p)\iff{}&p_d=p\land t_{issue}\le t<t_{expire}\\
+\operatorname{DecisionCurrent}(d,t,p)\iff{}&p_d=p\land t_{issue}\le t<t_{expire}\\
 &\land(t_{revoke}=\bot\text{ or }t<t_{revoke})\\
 &\land\neg\operatorname{pending}(d)\land\neg\operatorname{disputed}(d).
 \end{aligned}$$
@@ -724,7 +876,7 @@ plausible undeclared dependencies, and missing graph edges. Define
 
 $$\begin{aligned}
 \operatorname{Eligible}(d,c,S,S',\sigma;t,p)\iff{}&\operatorname{Approved}(d,r,c,\nu(c))\\
-&\land\operatorname{Current}(d,t,p)\land c\in C\cap C'\\
+&\land\operatorname{DecisionCurrent}(d,t,p)\land c\in C\cap C'\\
 &\land m(c)=\mathrm{unchanged}\land\nu(c)=\nu'(c)\\
 &\land c\notin A\\
 &\land\operatorname{AuthorizedUnaffected}(\sigma;r,r',c).

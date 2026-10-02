@@ -13,7 +13,7 @@ import typst
 root = Path(__file__).resolve().parents[1]
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument('--output', type=Path, required=True)
-parser.add_argument('--edition', default='September 2026 - revision responding to aiXiv review1589')
+parser.add_argument('--edition', default='October 2026 - revision responding to aiXiv review1607')
 args = parser.parse_args()
 output = args.output.resolve()
 output.parent.mkdir(parents=True, exist_ok=True)
@@ -40,6 +40,7 @@ s = re.sub(r'align: \((?:auto,)+\),', lambda m: m.group().replace('auto','left')
 s = s.replace('  set heading(numbering: sectionnumbering)',
               '  show table: it => { set par(justify: false); set text(size: 9pt); it }\n'
               '  set heading(numbering: sectionnumbering)')
+s = s.replace('#strong[Table 2. Complete synthetic-profile inventory and recorded\noutcomes.]', '#block(sticky: true)[#strong[Table 2. Complete synthetic-profile inventory and recorded\noutcomes.]]')
 source.write_text(s)
 typst.compile(str(source), output=str(output), root=str(output.parent))
 print(output)
