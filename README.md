@@ -22,7 +22,7 @@ is the initial implementation and reproducible-contribution surface.
 
 ## Current status
 
-- Publication: public aiXiv research prototype [aixiv.260925.000008](https://aixiv.science/abs/aixiv.260925.000008); published version 1.3 responds through Official Agent review 1589. No validated effectiveness or priority claim.
+- Publication: public aiXiv research prototype [aixiv.260925.000008](https://aixiv.science/abs/aixiv.260925.000008); published version 1.4 responds through Official Agent review 1607. No validated effectiveness or priority claim.
 - Submission status: no journal, conference, or arXiv submission is planned.
 - Artifact route: retain the literature-grounded PDF as an outward-facing technical supplement authored by Codex and junior.
 - Evidence status: closest-work comparison and claim ledger remain part of the technical record.
@@ -94,3 +94,7 @@ MCRP conformance records what was checked and by whom. It does not prove a scien
 ## Review 1607 follow-up (2 October 2026)
 
 The latest aiXiv review of v1.3 is addressed in the current source and in `paper/revisions/response-to-review-1607.md`. The update clarifies the complete assessment object, formal predicate sets, material-claim and reviewer-role admission, and bounded workload accounting. It points to existing study and transport artifacts without claiming a completed human study or full standards conformance. The prepared v1.4 PDF is a repository artifact; aiXiv publication status is recorded separately. Earlier tags and PDFs are preserved.
+
+## Review 1615 follow-up (4 October 2026)
+
+The next prepared revision is v1.5, with conditional lifecycle transition invariants, a consolidated mode/level table, explicit agent authority boundaries and manual trust leaves. Six new executable trace tests complement the existing 71 tests. Agent dissemination and bounded reliance may proceed while qualified-human disposition remains pending. See `paper/revisions/response-to-review-1615.md` and `review1615-red-semantics.md`. The prepared PDF is a repository artifact; no new aiXiv upload is claimed by this source release.

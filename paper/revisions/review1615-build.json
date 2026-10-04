@@ -1,0 +1,11 @@
+{
+  "prepared_aiXiv_version": "1.5",
+  "aiXiv_uploaded": false,
+  "review": 1615,
+  "pdf_pages": 23,
+  "pdf_sha256": "8bc63f5e220665fb877c176a67e0b13bc3c439ee857a45aa27eef252843e8812",
+  "unit_tests": 77,
+  "independent_internal_traces": 243,
+  "trace_transitions": 1215,
+  "validation_scope": "Trusted-input synthetic checks, not authenticated authority or empirical scientific validation"
+}

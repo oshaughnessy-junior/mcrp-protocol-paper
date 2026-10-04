@@ -1,4 +1,4 @@
-> **Document status.** AI-authored research prototype by Codex and junior, revised in response to aiXiv Official Agent reviews 1586, 1587, 1589 and 1607 of aixiv.260925.000008, versions 1.0, 1.1, 1.2 and 1.3. This is a lifecycle-policy proposal, not a validated intervention or certification standard. No scholarly priority or demonstrated improvement is asserted.
+> **Document status.** AI-authored research prototype by Codex and junior, revised in response to aiXiv Official Agent reviews 1586, 1587, 1589, 1607 and 1615 of aixiv.260925.000008, versions 1.0, 1.1, 1.2, 1.3 and 1.4. This is a lifecycle-policy proposal, not a validated intervention or certification standard. No scholarly priority or demonstrated improvement is asserted.
 
 ## Abstract
 
@@ -227,6 +227,47 @@ that limitation and seek another verifier or use a narrower witness/pending mode
 Even an admissible arrangement does not establish independent scientific failure
 modes; the S3 challenge requires a separately stated methodological target.
 
+#### Bounded agent actions and manual trust leaves
+
+An agent may propose an interpretation or scientific critique; the restriction is
+on **authority**, not on what it can discuss. Installation, inventory, execution,
+comparison and discrepancy reports may be delegated with a recorded principal,
+exact target, permitted tool/data access, action scope and termination limits.
+Record the agent/tool version, inputs, execution/log references, output and any
+human adoption as separate events. Unavailable logs remain unavailable rather
+than reconstructed as observed evidence. The human scientific-disposition field
+requires a qualified authorized human's own scoped decision; copying a generated
+verdict or supplying a different account name does not establish that act.
+
+For example, an agent can report that a calibration-sensitive comparison exceeds
+a prospective tolerance. The immutable report identifies the run and discrepancy.
+An authorized verifier confirms or rejects the observation, and a qualified human
+assesses its effect on the claim; neither the alert nor its dismissal silently
+writes a scientific pass. If the event is determined material, affected current
+reliance becomes pending before re-establishment. This routes bounded evidence to
+scarce human attention without asserting that triage quality, attention savings or
+agent-only scientific acceptance has been demonstrated. Agent-native dissemination,
+computational checking and use under a consumer's explicitly bounded policy can
+proceed while qualified-human disposition is pending. Human review is not required
+for every circulation or exploratory use of a record; such use must not be labeled
+positive MCRP assurance or represented as the missing human endorsement. A forum's
+decision to host the work, an agent's scoped recommendation, a consumer's chosen
+reliance policy and qualified-human scientific disposition are separate acts. Small-collaboration
+conflict declarations, separately controlled execution, immutable target checks
+and protected result permissions constrain the authorized path; they do not
+prevent hidden collusion, coercion or dishonest administrators.
+
+A manual transformation that cannot be instrumented must be an identified trust
+leaf or restricted dependency: name its custodian, inputs/outputs where available,
+method description, access boundary and what was not checked. A witness can record
+an inspectable manual step; an unavailable one cannot be converted to verified
+execution by attestation alone. The reviewer judges whether that remaining
+assumption is compatible with the claim's declared custody scope and scientific
+contract. If a mandatory check depends on unavailable evidence, its gate stays
+unknown or the claim is prospectively narrowed; resource scarcity never waives it.
+A material event affecting that leaf belongs in the propagating review graph.
+The system cannot discover an undeclared manual dependency automatically.
+
 ### 5.4 Human scientific disposition
 
 Qualified reviewers judge data fitness, method validity, uncertainty, systematics, domain assumptions, counterevidence, and interpretation. Their decision names the reviewed claims, release digest, competencies, conflicts, unresolved limitations, and residual risks. Machine success and human approval remain separate fields. Scientific acceptance requires at least MCRP-1 and every mandatory decision for the claimed level; it never certifies truth. MCRP-0 denotes disclosure or pending/incomplete assessment and cannot constitute scientific acceptance.
@@ -241,7 +282,7 @@ The formal definition is in Appendix A, which was already part of version 1.1. A
 
 For a concrete declared graph, let data `x@1` feed execution `e@1`, which feeds claim `c@1`; unrelated data `y@1` feeds claim `d@1`. A successor changes x to `x@2` but retains both claim contracts. The dirty root x reaches e and c, so c's current-use decision becomes pending even though its words and contract are unchanged. The graph leaves d untouched, but d is merely eligible for carry-forward after a current old approval and a separately authorized, successor-bound scope-delta disposition covering omitted dependencies and custody changes. No such disposition means no carry-forward. If the successor instead changes c's acceptance tolerance while preserving its prose, its contract version changes directly and also blocks carry-forward.
 
-The old/new union traversal preserves deleted lineage; removing the x-to-e edge cannot erase its old influence. Expired, withdrawn, pending or disputed old approval fails the currentness condition even without a detected dependency event. These operations establish an explicit review obligation, never a conclusion that c or d is scientifically false. The [executable cases](https://github.com/oshaughnessy-junior/mcrp-protocol-paper/tree/aixiv-review-1607/examples/revision-semantics) include removed edges, changed contracts, expiry and deliberately undetected hidden dependencies.
+The old/new union traversal preserves deleted lineage; removing the x-to-e edge cannot erase its old influence. Expired, withdrawn, pending or disputed old approval fails the currentness condition even without a detected dependency event. These operations establish an explicit review obligation, never a conclusion that c or d is scientifically false. The [executable cases](https://github.com/oshaughnessy-junior/mcrp-protocol-paper/tree/aixiv-review-1615/examples/revision-semantics) include removed edges, changed contracts, expiry and deliberately undetected hidden dependencies.
 
 #### Main-body carry-forward rule
 
@@ -279,6 +320,28 @@ The practical benefit of this lifecycle remains a hypothesis. No longitudinal st
 ## 6. Assurance, resources, and assessment modes
 
 Four assessment modes address practical boundaries. `full` begins at the declared custody boundary and executes the complete claim-bearing path. `slice` applies production algorithms to a justified subset and excludes untested scale or rare regimes. `checkpoint` begins from an identified intermediate and must preserve its generator identity, direct-input lineage, full-run evidence, and equivalence tests. `witness` records authorized inspection of immutable inputs, scheduler or service records, logs, intermediates, outputs, and checks when independent execution is impossible. Every mode has its own resource profile and per-claim coverage of `full`, `partial`, `audit-only`, or `unassessed`.
+
+### Mode and level at a glance
+
+Mode describes how evidence was obtained; level is computed from the complete
+predicate/authority record for its declared scope. No mode grants a level by
+itself. In the finite profile below:
+
+| Assessment mode | MCRP-0 | MCRP-1 | MCRP-2 | MCRP-3 |
+|---|---|---|---|---|
+| `full` | Disclosure or missing S1 gate; not acceptance | All S1 gates, including external admission and qualified independent human disposition | S1 plus reviewer-controlled reconstruction, execution and result comparison | S2 plus independent challenge, overall sensitivity, freshness exercise and all declared subcases |
+| `slice` | Same missing-gate rule | S1 for the explicitly scoped slice | S2 for that scope, with actual reviewer-controlled execution | S3 for that scope; untested scale/rare regimes remain excluded |
+| `checkpoint` | Same missing-gate rule | S1 with checkpoint generator/input lineage and trust boundary visible | S2 from the declared checkpoint boundary | S3 for that scope; omitted upstream execution is not silently verified |
+| `witness` | Same missing-gate rule | At most S1, if every S1 gate is satisfied with qualified human disposition | Unavailable in this mode; inspection is not a reviewer-controlled rerun | Unavailable because S2 is a prerequisite |
+
+Audit-only or unassessed coverage caps any mode at level 1; the cap is not a grant
+of scientific adequacy. A full-claim label for slice/checkpoint additionally needs
+a policy-authorized validated coverage argument. Partial claims retain visibly
+partial scope and cannot support a release-wide full-scope aggregate. Expired,
+pending or disputed authority withholds the current label entirely, distinct from
+MCRP-0. An agent-only evidence bundle lacking human disposition remains MCRP-0 or
+pending, regardless of how many computational checks pass. Table 2 gives the exact
+inventory; Appendix A concerns revision eligibility, not additional badges.
 
 ### Reproducible assignment rules
 
@@ -494,7 +557,7 @@ material claims, a mismatched release/policy/time, or an unjustified full-scope
 `slice`/`checkpoint` assessment cannot produce an aggregate. An empty claim
 inventory cannot pass vacuously. Level 0 is disclosure, not accepted conformance.
 
-The [executable assessment profile](https://github.com/oshaughnessy-junior/mcrp-protocol-paper/tree/aixiv-review-1607/examples/assurance-assignment) exposes these
+The [executable assessment profile](https://github.com/oshaughnessy-junior/mcrp-protocol-paper/tree/aixiv-review-1615/examples/assurance-assignment) exposes these
 identifiers and consumes immutable outcome records. Its demonstration and tests
 reproduce the gate hierarchy, forbidden exemptions, currentness, and scope
 aggregation. It checks supplied assertions and declared actor allow-lists; it
@@ -507,7 +570,7 @@ an MCRP-3 award to this manuscript or its prototype.
 Assurance is distinct from resource burden. RRP[C,D,P,X,H,A] records computation, data/storage, platform, access/governance, human effort and agent service consumption. It is not an intelligence or assurance score.
 
 We provide a concrete reporting profile, `mcrp-resource-envelope/0.1`, and an
-[executable validator/comparator and complete JSON template](https://github.com/oshaughnessy-junior/mcrp-protocol-paper/tree/aixiv-review-1607/evaluation/resource-reporting). This is a
+[executable validator/comparator and complete JSON template](https://github.com/oshaughnessy-junior/mcrp-protocol-paper/tree/aixiv-review-1615/evaluation/resource-reporting). This is a
 measurement protocol proposal, not calibrated resource data. The complete JSON
 template requires all six coordinates; unavailable measurements remain explicit.
 
@@ -660,7 +723,7 @@ coefficients or a favorable simulation result.
 
 ### 8.2 A bounded RO-Crate 1.2 transport example
 
-We now provide a concrete [SRR-subset export/import example](https://github.com/oshaughnessy-junior/mcrp-protocol-paper/tree/aixiv-review-1607/examples/ro-crate-crosswalk), deliberately targeting RO-Crate 1.2 rather than claiming the newest version. Following its metadata and profile rules [@ro-crate-1.2], the crate contains a metadata descriptor, root Dataset, File and CreativeWork entities, and a bundled profile description. Standard terms carry discovery metadata; an explicit experimental namespace carries MCRP-specific fields. The namespace uses the reserved example.org domain and is not claimed to be a persistent ontology service.
+We now provide a concrete [SRR-subset export/import example](https://github.com/oshaughnessy-junior/mcrp-protocol-paper/tree/aixiv-review-1615/examples/ro-crate-crosswalk), deliberately targeting RO-Crate 1.2 rather than claiming the newest version. Following its metadata and profile rules [@ro-crate-1.2], the crate contains a metadata descriptor, root Dataset, File and CreativeWork entities, and a bundled profile description. Standard terms carry discovery metadata; an explicit experimental namespace carries MCRP-specific fields. The namespace uses the reserved example.org domain and is not claimed to be a persistent ontology service.
 
 | Source meaning | Representation and preservation boundary |
 |---|---|
@@ -741,7 +804,7 @@ setting. No current synthetic test establishes any of these empirical prediction
 
 A smallest useful external exercise would ask a group outside the author-directed team to select a public workflow, freeze a material-claim inventory and amendment oracle, and run paired B2/M tasks with affected cases and unaffected controls under declared budgets. It must retain every offered task, including failures, refusals and timeouts, and report the complete decision table and preparation/review costs. One workflow can expose a failure or feasibility issue; it cannot establish population effectiveness. A comparative study needs the prespecified clusters, margins and inference described above.
 
-The [benchmark scaffold](https://github.com/oshaughnessy-junior/mcrp-protocol-paper/tree/aixiv-review-1607/evaluation/lifecycle-benchmark) supplies an exact calculator and fields to freeze, not an enrolled or registered study. Its descriptive success rule requires reduced stale reliance, positive acceptance of unaffected controls, bounded loss of control acceptance and bounded false invalidation. Refusing every task fails the positive control requirement. Abstaining only on affected tasks can reduce stale reliance but does not establish localization; that claim requires the separate sensitivity endpoint. Unknown population prevalence and unmeasured cost prevent converting these synthetic examples into a deployment benefit estimate.
+The [benchmark scaffold](https://github.com/oshaughnessy-junior/mcrp-protocol-paper/tree/aixiv-review-1615/evaluation/lifecycle-benchmark) supplies an exact calculator and fields to freeze, not an enrolled or registered study. Its descriptive success rule requires reduced stale reliance, positive acceptance of unaffected controls, bounded loss of control acceptance and bounded false invalidation. Refusing every task fails the positive control requirement. Abstaining only on affected tasks can reduce stale reliance but does not establish localization; that claim requires the separate sensitivity endpoint. Unknown population prevalence and unmeasured cost prevent converting these synthetic examples into a deployment benefit estimate.
 
 ## 10. Conclusion
 
@@ -950,6 +1013,70 @@ This
 appendix supplies explicit semantics for a lifecycle policy, not a claim to invent
 reachability algorithms, graph-based provenance, or immutable review records.
 
+
+### A.6 Transition invariants and their sufficiency boundary
+
+Propositions S1 and S2 above already prove finite declared-impact coverage and the
+carry-forward barrier. They do not prove prevention of all real stale claims.
+A bounded integration model makes the additional transition assumptions explicit.
+For one claim/scope/policy target, let state be
+
+$$\Omega=(\tau,e,H,J,q),\qquad \tau=(c,r,s,p),$$
+
+where $e$ is a material-event epoch, $H$ an append-only assessment history, $J$ the
+processed event IDs, and $q$ the last calculated label or withheld. A receipt
+contains its exact target, assessment object and issuance epoch. Updates and
+reliance queries are serialized; target identities, issuance stamps, authority and
+observed events are trusted inputs. These are substantive implementation premises,
+not properties a string-valued toy can establish. Restamping old evidence with a new epoch or reusing a policy ID for changed rules violates those premises.
+
+| Transition | Guard and effect |
+|---|---|
+| Submit assessment | Require exact target and issuance epoch e; calculate with Section 6; append the record/result to H and update q. Agent recommendation cannot fill the human gate under the fixed policy. |
+| Observe relevant material event | On first delivery of an identified event, add it to J, increment e and withhold q atomically. Repeat delivery of that same event is idempotent. |
+| Supersede | Require a distinct release identity; preserve H, increment e, set the successor target and withhold q. This conservative branch never copies approval. |
+| Re-establish | Submit newly authorized current-epoch assertions on the exact target, or issue the explicit successor-bound carry-forward record after the full eligibility guard. The small transition toy implements reassessment, not the carry-forward issuing service. |
+| Query current use | Check current target/epoch/policy and assessment time, and reevaluate each supplied expiry against query time. Return withheld when any check fails; reading H alone gives history, not current approval. Use `current_at(view,p,t)`; cached `view.current` is only the last assessment snapshot. |
+
+**Conditional invariant T1 (history and no silent replay).** Every reachable
+history extends its predecessor by zero or one assessment; supersession or an
+event cannot edit it. A receipt from another target or earlier event epoch cannot
+restore a current label. *Proof sketch:* initialization has empty history; only
+Submit appends, every other transition preserves H, and Submit checks both
+bindings. Induction over the serialized trace gives the result. This rejects
+replaying an old success after a declared repair, but does not detect unchanged
+identifiers falsely attached to modified bytes.
+
+**Conditional invariant T2 (known invalidation barrier).** Between a relevant
+observed event and a valid current-epoch reassessment, current use is withheld;
+late completion of an earlier run cannot restore it. Expiry withholds current use
+even without a newly delivered event. *Proof sketch:* Observe clears q and advances
+e; old completions fail the epoch guard, while Query checks expiry at the actual
+query tick. A successful reassessment must satisfy the existing exact-target and
+currentness gates. Real clocks, complete event delivery, atomic compare-and-append
+and valid re-establishment remain assumptions.
+
+**Conditional invariant T3 (authority cannot be inferred from computation).** Under
+the fixed policy, a machine recommendation without the authorized human
+scientific-disposition record cannot yield a positive assurance level. *Proof
+sketch:* that record is a non-exemptible S1 gate and every positive level contains
+S1. This is a policy/record implication, not proof that a claimed human actor is
+authentic or independent.
+
+The new [lifecycle transition supplement](https://github.com/oshaughnessy-junior/mcrp-protocol-paper/tree/aixiv-review-1615/examples/lifecycle-transitions) composes the existing assurance calculator
+with a finite trusted-event reducer. Six trace tests cover post-acceptance event
+invalidation without history mutation, late completion, agent-only disposition,
+successor replay, query-time expiry, and the deliberately undetected missing-event
+case. Existing Appendix A examples separately cover removed edges, contract
+changes, and missing scope-delta authority. These are executable counterexamples
+and conditional preservation checks, not a full distributed protocol verification.
+An unreported manual transformation or forged identifier can leave the model green:
+no rule over the same visible record can distinguish that hidden change from no
+change. Nor must every citation or contextual dependency be “current”; the guard
+concerns required predicates and material propagating dependencies under the
+recorded policy. The rules are sufficient for the stated declared-event failures
+under their assumptions, not necessary mechanisms for every system or sufficient
+conditions for scientific truth, usable institutions or empirical superiority.
 
 ## Agent participation and versioned artifacts
 

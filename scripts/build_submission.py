@@ -13,7 +13,7 @@ import typst
 root = Path(__file__).resolve().parents[1]
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument('--output', type=Path, required=True)
-parser.add_argument('--edition', default='October 2026 - revision responding to aiXiv review1607')
+parser.add_argument('--edition', default='October 2026 - revision responding to aiXiv review1615')
 args = parser.parse_args()
 output = args.output.resolve()
 output.parent.mkdir(parents=True, exist_ok=True)
